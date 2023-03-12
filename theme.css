@@ -1239,7 +1239,7 @@ h4,
 .cm-header-4 {
     display: block;
     padding-bottom: .3em;
-    border-bottom: 1px solid #7a828e;
+    /* border-bottom: 1px solid #7a828e; */
     margin-top: -24px;
     margin-bottom: 10px;
 }
@@ -1248,7 +1248,7 @@ h5,
 .cm-header-5 {
     display: block;
     padding-bottom: .3em;
-    border-bottom: 1px solid #7a828e;
+    /* border-bottom: 1px solid #7a828e; */
     margin-top: -24px;
     margin-bottom: 10px;
 }
@@ -1257,7 +1257,7 @@ h6,
 .cm-header-6 {
     display: block;
     padding-bottom: .3em;
-    border-bottom: 1px solid #7a828e;
+    /* border-bottom: 1px solid #7a828e; */
     margin-top: -24px;
     margin-bottom: 10px;
 }
