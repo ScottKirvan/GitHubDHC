@@ -175,8 +175,8 @@ body {
     --anim-motion-jumpy: cubic-bezier(0.68, -0.55, 0.27, 1.55);
     --anim-motion-swing: cubic-bezier(0, 0.55, 0.45, 1);
     /* Blockquotes */
-    --blockquote-border-thickness: 2px;
-    --blockquote-border-color: var(--interactive-accent);
+    --blockquote-border-thickness: .25em;
+    --blockquote-border-color: #7a828e;
     --blockquote-font-style: normal;
     --blockquote-color: inherit;
     --blockquote-background-color: transparent;
@@ -208,8 +208,8 @@ body {
     --checklist-done-color: var(--text-muted);
     /* Code */
     --code-size: var(--font-smaller);
-    --code-background: var(--background-primary-alt);
-    --code-normal: var(--text-muted);
+    --code-background: #272b33;
+    --code-normal: #f0f3f6;
     --code-comment: var(--text-faint);
     --code-function: var(--color-orange);
     --code-important: var(--color-orange);
@@ -334,8 +334,8 @@ body {
     /* View header */
     --header-height: 40px;
     /* Horizontal rules */
-    --hr-color: var(--background-modifier-border);
-    --hr-thickness: 2px;
+    --hr-color: #7a828e;
+    --hr-thickness: .25em;
     /* Icons */
     --icon-size: var(--icon-m);
     --icon-stroke: var(--icon-m-stroke-width);
@@ -696,7 +696,7 @@ body {
     --shadow-s: none;
     --shadow-l: none;
 
-    --inline-code-background: #6e768166;
+    --inline-code-background: rgba(158, 167, 179, .4);
     --h-color-theme: var(--color-green);
     --h1-color-theme: var(--color-green);
     --h2-color-theme: var(--color-green);
@@ -779,7 +779,7 @@ body {
     --shadow-s: none;
     --shadow-l: none;
 
-    --inline-code-background: #aeb8c133;
+    --inline-code-background: rgba(158, 167, 179, 0.1);
     --h-color-theme: var(--text-normal);
     --h1-color-theme: var(--text-normal);
     --h2-color-theme: var(--text-normal);
@@ -1198,6 +1198,7 @@ select:focus,
     padding: 0.2em 0.4em;
     border-radius: 6px;
     color: var(--text-normal);
+    font-size: 85%;
 }
 
 h1,
@@ -1267,16 +1268,18 @@ h6,
     padding-bottom: .3em;
     border-bottom: 1px solid #7a828e;
     margin-top: -24px;
-    margin-bottom: 10px;
-    color: #71b7ff;
-}
-
-.inline-title:before {
-    content: "test test";
+    margin-bottom: 8px !important;
+    margin-right: 0 !important;
+    min-width: 0 !important;
+    color: #f0f3f6;
+    font-weight: 400;
+    line-height: 1.125;
+    font-size: 32px;
 }
 
 .markdown-preview-sizer,
 .cm-sizer {
     border: 1px solid #7a828e;
     padding: 32px;
+    border-radius: 6px;
 }
