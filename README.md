@@ -34,7 +34,7 @@ Under Appearance, turn off `Show inline title`
  - Inline code blocks in GitHub style
  - Obsidian UI buttons in GitHub style
 
-## Theme Settigns
+## Theme Settings
 Theme settings can be find in the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
 
 Current settings include:
