@@ -1,3 +1,7 @@
+# GitHubDHC
+
+An Obsidian theme that's an attempt to *clone* the current (2023) **GitHub's "Dark high contrast"** theme.
+
 Some system settings you'll want to change:
 
 font:  set this to one of the following:
@@ -8,6 +12,7 @@ Font size: 14
 
 Under Appearance, turn off `Show inline title`
 
+---
 # Obsidain GitHub Theme
 ![Promo](/imgs/promo.png)
 ![](https://img.shields.io/badge/downloads-2400%2B-7ee787?style=for-the-badge&labelColor=21262d)
