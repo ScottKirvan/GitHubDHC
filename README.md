@@ -1,3 +1,22 @@
+Some system settings you'll want to change:
+
+font:  set this to one of the following:
+`-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"`
+I used `Segoe UI`
+
+Font size: 14
+
+Under Appearance, turn off `Show inline title`
+
+
+# Header1
+## Header2
+### Header3
+#### Header4
+##### Header5
+###### Header6
+
+
 # Obsidain GitHub Theme
 ![Promo](/imgs/promo.png)
 ![](https://img.shields.io/badge/downloads-2400%2B-7ee787?style=for-the-badge&labelColor=21262d)
