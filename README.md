@@ -1,6 +1,6 @@
 # GitHubDHC
 
-An Obsidian theme that's an attempt to *clone* the GitHub's current (2023) *"Dark high contrast"* theme.
+An Obsidian theme that's an attempt to *clone* GitHub's current (2023) *"Dark high contrast"* theme.
 
 Some system settings you'll want to change:
 
