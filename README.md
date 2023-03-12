@@ -10,6 +10,9 @@ I used `Segoe UI`
 
 Font size: 14
 
+Set Accent Color to (113, 183, 255)
+
+install the Style Settings Plugin, and set all header colors to white (#ffffff)
 
 ---
 # Obsidain GitHub Theme
