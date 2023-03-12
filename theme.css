@@ -613,9 +613,9 @@ body {
     --accent-s: var(--accent-s-theme);
     --accent-l: var(--accent-l-theme);
     /* Backgrounds */
-    --background-primary: var(--color-base-00);
+    --background-primary: var(--color-base-00-sk);
     --background-primary-alt: var(--color-base-10);
-    --background-secondary: var(--color-base-20);
+    --background-secondary: var(--color-base-00-sk);
     --background-modifier-hover: rgba(var(--rgb-hover), var(--background-modifier-hover-alpha));
     --background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.15);
     --background-modifier-border: var(--color-base-30);
@@ -663,6 +663,7 @@ body {
     --color-purple: #D2A8FF;
     --color-pink: #f778ba;
 
+    --color-base-00-sk: #0a0c10;
     --color-base-00: #0d1117;
     --color-base-10: #161b22;
     --color-base-20: #161b22;
@@ -671,7 +672,8 @@ body {
     --color-base-35: #21262d;
     --color-base-40: #30363d;
     --color-base-50: #6e7681;
-    --color-base-60: #999; /* Unused */
+    --color-base-60: #999;
+    /* Unused */
     --color-base-70: #8b949e;
     --color-base-100: #c9d1d9;
 
@@ -714,6 +716,7 @@ body {
     --kanban-lane-count: var(--color-base-35);
     --kanban-options-btn: var(--color-base-30);
 }
+
 .is-mobile.theme-dark {
     --color-base-00: #0d1117;
     --color-base-10: #161b22;
@@ -753,7 +756,8 @@ body {
     --color-base-35: #d4d4d4;
     --color-base-40: #bdbdbd;
     --color-base-50: #6e7781;
-    --color-base-60: #707070; /* Unused */
+    --color-base-60: #707070;
+    /* Unused */
     --color-base-70: #57606a;
     --color-base-100: #24292f;
 
@@ -807,6 +811,7 @@ body.colorblind_protan-deutan.theme-dark {
     --color-btn-primary-bg: #1f6feb;
     --color-btn-primary-hover-bg: #388bfd;
 }
+
 body.colorblind_protan-deutan.theme-light {
     --color-red-rgb: 179, 89, 0;
     --color-red: #b35900;
@@ -829,6 +834,7 @@ body.colorblind_tritan.theme-dark {
     --color-btn-primary-bg: #1f6feb;
     --color-btn-primary-hover-bg: #388bfd;
 }
+
 body.colorblind_tritan.theme-light {
     --color-green-rgb: 12, 181, 79;
     --color-green: #218bff;
@@ -842,13 +848,15 @@ body.colorblind_tritan.theme-light {
 }
 
 /* Tables */
-.markdown-rendered td, 
+.markdown-rendered td,
 .markdown-rendered th {
     padding: var(--size-2-3) var(--size-4-3);
-} 
+}
+
 .markdown-rendered th {
     text-align: center;
 }
+
 .markdown-rendered tbody tr:nth-child(2n) {
     background-color: var(--background-secondary);
 }
@@ -857,13 +865,16 @@ body.colorblind_tritan.theme-light {
 button {
     transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
 }
+
 button:hover {
     cursor: var(--cursor-link);
 }
+
 button.mod-cta {
     background-color: var(--color-btn-primary-bg);
     color: var(--text-on-accent);
 }
+
 button.mod-cta:hover {
     background-color: var(--color-btn-primary-hover-bg);
 }
@@ -874,11 +885,13 @@ body.callout-on {
     --callout-border-width: 0;
     --callout-padding: 0 1em;
 }
+
 body.callout-on .callout {
     border-left: 0.25em solid var(--color-base-30);
     background-color: transparent;
     color: var(--text-muted);
 }
+
 body.callout-on .callout-content p {
     margin: 0.1em 0;
 }
@@ -897,6 +910,7 @@ body.headers-one-color {
 .kanban-plugin {
     --lane-width: 348px;
 }
+
 body.theme-light .kanban-plugin__lane-items>div {
     box-shadow: rgb(140 149 159 / 15%) 0px 3px 6px;
 }
@@ -911,10 +925,12 @@ body.kanban-same-height-cards .kanban-plugin__item-title-wrapper {
 body.kanban-full-height-column button.kanban-plugin__new-item-button {
     align-self: flex-end;
 }
+
 body.kanban-full-height-column .kanban-plugin__item-button-wrapper {
     flex-grow: 1;
     display: flex;
 }
+
 body.kanban-full-height-column .kanban-plugin__lane-wrapper {
     min-height: 100%;
 }
@@ -923,55 +939,67 @@ body.kanban-full-height-column .kanban-plugin__lane-wrapper {
 body.kanban-on .kanban-plugin {
     background-color: var(--kanban-background);
 }
+
 body.kanban-on .kanban-plugin__lane {
     background-color: var(--kanban-lane-background);
     border: 1px solid var(--kanban-lane-border);
 }
+
 body.kanban-on .kanban-plugin__lane-title {
     flex-grow: 0;
     width: fit-content;
 }
+
 body.kanban-on .kanban-plugin__item-content-wrapper,
 body.kanban-on .kanban-plugin__item-title-wrapper,
 body.kanban-on .kanban-plugin__item-metadata-wrapper:not(:empty) {
     background: var(--kanban-item-background);
 }
+
 body.kanban-on .kanban-plugin__icon>svg {
     transform: rotate(90deg);
 }
+
 body.kanban-on .kanban-plugin__lane-settings-button-wrapper {
     margin-left: auto;
 }
+
 body.kanban-on div.kanban-plugin__lane-title-count {
     background-color: var(--kanban-lane-count);
     border-radius: 1em;
     padding: 2px 5px;
 }
-body.kanban-on .kanban-plugin__item button.kanban-plugin__item-prefix-button, 
-body.kanban-on .kanban-plugin__item button.kanban-plugin__item-postfix-button, 
+
+body.kanban-on .kanban-plugin__item button.kanban-plugin__item-prefix-button,
+body.kanban-on .kanban-plugin__item button.kanban-plugin__item-postfix-button,
 body.kanban-on .kanban-plugin__lane button.kanban-plugin__lane-settings-button {
     padding: 0 5px;
     height: 24px;
     box-shadow: none;
 }
-body.kanban-on .kanban-plugin__item button.kanban-plugin__item-prefix-button:hover, 
-body.kanban-on .kanban-plugin__item button.kanban-plugin__item-postfix-button:hover, 
+
+body.kanban-on .kanban-plugin__item button.kanban-plugin__item-prefix-button:hover,
+body.kanban-on .kanban-plugin__item button.kanban-plugin__item-postfix-button:hover,
 body.kanban-on .kanban-plugin__lane button.kanban-plugin__lane-settings-button:hover {
     background-color: var(--kanban-options-btn);
     cursor: pointer;
 }
+
 body.kanban-on button.kanban-plugin__new-item-button {
     border: none;
     justify-content: flex-start;
 }
+
 body.kanban-on .kanban-plugin__new-item-button:hover {
     color: var(--text-normal);
     background-color: inherit;
     box-shadow: none;
 }
+
 body.kanban-on .kanban-plugin__lane-items {
     padding: 8px 15px;
 }
+
 body.kanban-on .kanban-plugin__item-prefix-button-wrapper input[type=checkbox] {
     filter: none;
 }
@@ -999,6 +1027,7 @@ body.kanban-full .kanban-plugin__lane-grip {
     margin: 0;
     cursor: default;
 }
+
 body.kanban-full .kanban-plugin__lane-header-wrapper div {
     z-index: 1;
 }
@@ -1007,6 +1036,7 @@ body.kanban-full .kanban-plugin__lane-header-wrapper div {
 body.kanban-full .kanban-plugin__lane-header-wrapper {
     padding-left: 14px;
 }
+
 body.kanban-full .kanban-plugin__markdown-preview-view {
     font-size: inherit;
 }
@@ -1042,6 +1072,7 @@ body.kanban-full .kanban-plugin__item-title-wrapper,
 body.kanban-full .kanban-plugin__item-metadata-wrapper:not(:empty) {
     background: var(--kanban-item-background);
 }
+
 body.kanban-full .kanban-plugin__item {
     border-color: var(--kanban-lane-border);
 }
@@ -1063,6 +1094,7 @@ body.kanban-full .kanban-plugin__item-form {
 body.kanban-full .kanban-plugin__item-title-wrapper {
     padding: 12px 12px 12px 0;
 }
+
 body.kanban-full .kanban-plugin__item-title,
 body.kanban-full .kanban-plugin__item-input-wrapper {
     padding-left: 12px;
@@ -1095,6 +1127,7 @@ body.kanban-full .kanban-plugin__icon {
 body.kanban-full .kanban-plugin__item-postfix-button.clickable-icon {
     opacity: 0;
 }
+
 body.kanban-full .kanban-plugin__item:hover .kanban-plugin__item-postfix-button.clickable-icon {
     opacity: 1;
 }
@@ -1127,37 +1160,40 @@ body.kanban-full .kanban-plugin__item-prefix-button-wrapper input[type=checkbox]
     filter: none;
     margin: 3px;
 }
+
 body.kanban-full .kanban-plugin__markdown-preview-view>div>* {
     overflow-x: unset;
 }
 
 /* fix: input borders */
-textarea:active, 
-input[type='text']:active, 
-input[type='search']:active, 
-input[type='email']:active, 
-input[type='password']:active, 
-input[type='number']:active, 
-textarea:focus, 
-input[type='text']:focus, 
-input[type='search']:focus, 
-input[type='email']:focus, 
-input[type='password']:focus, 
-input[type='number']:focus, 
-textarea:focus-visible, 
-input[type='text']:focus-visible, 
-input[type='search']:focus-visible, 
-input[type='email']:focus-visible, 
-input[type='password']:focus-visible, 
+textarea:active,
+input[type='text']:active,
+input[type='search']:active,
+input[type='email']:active,
+input[type='password']:active,
+input[type='number']:active,
+textarea:focus,
+input[type='text']:focus,
+input[type='search']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='number']:focus,
+textarea:focus-visible,
+input[type='text']:focus-visible,
+input[type='search']:focus-visible,
+input[type='email']:focus-visible,
+input[type='password']:focus-visible,
 input[type='number']:focus-visible {
     box-shadow: 0 0 0 1px var(--background-modifier-border-focus);
 }
-select:focus, .dropdown:focus {
+
+select:focus,
+.dropdown:focus {
     box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
 }
 
 /* inline code block */
-.markdown-rendered :not(pre) > code {
+.markdown-rendered :not(pre)>code {
     background-color: var(--inline-code-background);
     padding: 0.2em 0.4em;
     border-radius: 6px;
