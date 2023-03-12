@@ -10,7 +10,6 @@ I used `Segoe UI`
 
 Font size: 14
 
-Under Appearance, turn off `Show inline title`
 
 ---
 # Obsidain GitHub Theme
