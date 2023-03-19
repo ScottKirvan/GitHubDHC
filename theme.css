@@ -1,6 +1,6 @@
 /* @settings
 
-name: GitHub theme settings
+name: GitHubDHC theme settings
 id: id
 settings:
     -
@@ -65,7 +65,7 @@ settings:
         opacity: false
         format: hex
         default-light: '#24292f'
-        default-dark: '#7ee787'
+        default-dark: '#ffffff'
     -
 
         # Particular Headers
@@ -83,7 +83,7 @@ settings:
         opacity: false
         format: hex
         default-light: '#24292f'
-        default-dark: '#7ee787'
+        default-dark: '#ffffff'
     -
         id: h2-color-theme
         title: h2 color
@@ -91,7 +91,7 @@ settings:
         opacity: false
         format: hex
         default-light: '#24292f'
-        default-dark: '#7ee787'
+        default-dark: '#ffffff'
     -
         id: h3-color-theme
         title: h3 color
@@ -99,7 +99,7 @@ settings:
         opacity: false
         format: hex
         default-light: '#24292f'
-        default-dark: '#7ee787'
+        default-dark: '#ffffff'
     -
         id: h4-color-theme
         title: h4 color
@@ -107,7 +107,7 @@ settings:
         opacity: false
         format: hex
         default-light: '#24292f'
-        default-dark: '#7ee787'
+        default-dark: '#ffffff'
     -
         id: h5-color-theme
         title: h5 color
@@ -115,7 +115,7 @@ settings:
         opacity: false
         format: hex
         default-light: '#24292f'
-        default-dark: '#7ee787'
+        default-dark: '#ffffff'
     -
         id: h6-color-theme
         title: h6 color
@@ -123,7 +123,7 @@ settings:
         opacity: false
         format: hex
         default-light: '#24292f'
-        default-dark: '#7ee787'
+        default-dark: '#ffffff'
     -
 
         # Kanban Settings
@@ -164,6 +164,15 @@ settings:
         default: on
 */
 body {
+    /*───────── Obsidian - provided Variables ──────────*/
+    --font-sans: -apple-system BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
+        Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-mono: 'DM Mono', 'Fira Code', Courier, monospace;
+
+    --font-interface-theme: var(--font-sans);
+    --font-text-theme: var(--font-sans);
+    --font-monospace-theme: var(--font-mono);
+
     /* Animations */
     --anim-duration-none: 0;
     --anim-duration-superfast: 70ms;
@@ -677,9 +686,9 @@ body {
     --color-base-70: #8b949e;
     --color-base-100: #c9d1d9;
 
-    --accent-h-theme: 212;
+    --accent-h-theme: 210;
     --accent-s-theme: 100%;
-    --accent-l-theme: 67%;
+    --accent-l-theme: 72%;
     --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
     --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
     --color-accent-1: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 3.8%));
