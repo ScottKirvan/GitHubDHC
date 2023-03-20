@@ -1,5 +1,5 @@
 ![Promo](imgs/promo.png)
-# [GitHubDHC](https://github.com/ScottKirvan/GitHubDHC - An Obsidian GitHub Style Theme
+# [GitHubDHC](https://github.com/ScottKirvan/GitHubDHC) - An Obsidian GitHub Style Theme
 I do a lot of writing in Markdown, mostly for things that I'm doing up on [GitHub](https://github.com/) ([Obsidian](https://obsidian.md/) is an awesome editor for this).  I was running into some frustration with the formatting not mapping really well between Obsidian and GitHub, when I thought, "there has to be a theme for this!"  I found [@krios2146's](https://github.com/krios2146) [Obsidian GIthub Theme](https://github.com/krios2146/obsidian-theme-github).  
 
 It was close, but not really the way *my* GitHub looks (I use the GitHub Dark High Contrast theme when I'm working online), so I decided to start hacking the css a bit to see how close I could get.  The look of GitHubDHC is different enough from the original theme that I decided to start a new fork based on Vladimir's really nicely done Obsidian GitHub Theme -- it's worth checking out - he did all the initial work and the Kanban theme'ing - it's really good.  
