@@ -26,7 +26,7 @@ Current settings include:
 ## How to Install
 I hope to have it available soon on the Obsidian theme store.
 
-### Manual
+### Manual Install
 1.  Download this repo
 2.  Copy the `theme.css` file into your vault's `/.obsidian/themes` directory
 3.  Rename the file to `GitHubDHC.css` so it will have a unique name in the theme selection dropdown
