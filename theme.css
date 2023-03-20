@@ -671,6 +671,7 @@ body {
     --color-blue: #6CB6FF;
     --color-purple: #D2A8FF;
     --color-pink: #f778ba;
+    --color-white: #ffffff;
 
     --color-base-00-sk: #0a0c10;
     --color-base-00: #0d1117;
@@ -706,13 +707,13 @@ body {
     --shadow-l: none;
 
     --inline-code-background: rgba(158, 167, 179, .4);
-    --h-color-theme: var(--color-green);
-    --h1-color-theme: var(--color-green);
-    --h2-color-theme: var(--color-green);
-    --h3-color-theme: var(--color-green);
-    --h4-color-theme: var(--color-green);
-    --h5-color-theme: var(--color-green);
-    --h6-color-theme: var(--color-green);
+    --h-color-theme: var(--color-white);
+    --h1-color-theme: var(--color-white);
+    --h2-color-theme: var(--color-white);
+    --h3-color-theme: var(--color-white);
+    --h4-color-theme: var(--color-white);
+    --h5-color-theme: var(--color-white);
+    --h6-color-theme: var(--color-white);
     --background-modifier-hover-alpha: 0.12;
     --color-btn-primary-bg: #238636;
     --color-btn-primary-hover-bg: #2ea043;
@@ -1281,9 +1282,9 @@ h6,
     margin-right: 0 !important;
     min-width: 0 !important;
     color: #f0f3f6;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.125;
-    font-size: 32px;
+    font-size: 14px;
 }
 
 .markdown-preview-sizer,
