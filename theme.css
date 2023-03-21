@@ -642,7 +642,7 @@ body {
     --text-normal: var(--color-base-100);
     --text-muted: var(--color-base-70);
     --text-faint: var(--color-base-50);
-    --text-on-accent: white;
+    --text-on-accent: black;
     --text-error: var(--color-red);
     --text-success: var(--color-green);
     --text-selection: hsla(var(--color-accent-hsl), 0.2);
@@ -715,7 +715,7 @@ body {
     --h5-color-theme: var(--color-white);
     --h6-color-theme: var(--color-white);
     --background-modifier-hover-alpha: 0.12;
-    --color-btn-primary-bg: #238636;
+    --color-btn-primary-bg: #09b43a;
     --color-btn-primary-hover-bg: #2ea043;
 
     /* Kanban colors */
