@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/logo.png?raw=true" alt="logo" height="200" height="auto" />
+  <img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/promo.png?raw=true" alt="promo" height="auto" />
   <h1><a href="https://github.com/ScottKirvan/GitHubDHC">GitHubDHC</a></h1>
   <h3>A GitHub Dark High Contrast theme for Obsidian!</h3> 
   
