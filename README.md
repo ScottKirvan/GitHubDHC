@@ -2,7 +2,7 @@
 # [GitHubDHC](https://github.com/ScottKirvan/GitHubDHC) - An Obsidian GitHub Dark High Contrast Theme
 <div>
 <center>
-  <img src="imgs/logo.png" alt="logo" width="200" height="auto" />
+  <img align="center" src="imgs/logo.png" alt="logo" width="200" height="auto" />
   <h1>Awesome Readme Template</h1>
   
   <p>
