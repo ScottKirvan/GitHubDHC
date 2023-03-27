@@ -40,6 +40,17 @@ I'm not a css creator and I'm sure I've used some poor practices and there's pro
 
 This theme DOES NOT support Obsidian's light color scheme, and I'm not sure if any of the Vladimir's original colorblind colorschemes are still working or not.  I welcome the help from anyone that wants to work on this stuff, plus, GitHub uses a lot of fun style tricks in their page rendering that would be cool to see implemented.
 
+## Preview
+<details><summary> Screenshots </summary>
+<ul>
+<li><img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/screenshots/GHDC1.png?raw=true"></li>
+<li><img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/screenshots/GHDC2.png?raw=true"></li>
+<li><img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/screenshots/settings.png?raw=true"></li>
+</ul>
+</details>
+
+
+
 ## Features
  - [Kanban](https://github.com/mgmeyers/obsidian-kanban) board has been styled to look like a GitHub Projects
  - Callouts in GitHub style
