@@ -1,13 +1,12 @@
 ![Promo](imgs/promo.png)
 # [GitHubDHC](https://github.com/ScottKirvan/GitHubDHC) - An Obsidian GitHub Dark High Contrast Theme
 <div align="center">
-  <img align="center" src="imgs/logo.png" alt="logo" width="200" height="auto" />
+  <img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/logo.png?raw=true" alt="logo" height="200" height="auto" />
   <h1>Awesome Readme Template</h1>
   
   <p>
     An awesome README template for your projects! 
   </p>
-  
   
 <!-- Badges -->
 <p>
@@ -42,7 +41,7 @@
   </h4>
 </div> 
 I do a lot of writing in Markdown, mostly for things that I'm doing up on [GitHub](https://github.com/) ([Obsidian](https://obsidian.md/) is an awesome editor for this).  I was running into some frustration with the formatting not mapping really well between Obsidian and GitHub, when I thought, "there has to be a theme for this!"  I found [@krios2146's](https://github.com/krios2146) [Obsidian GIthub Theme](https://github.com/krios2146/obsidian-theme-github).  
-<center><img src="imgs/logo.png"></center>
+
 It was close, but not really the way *my* GitHub looks (I use the GitHub Dark High Contrast theme when I'm working online), so I decided to start hacking the css a bit to see how close I could get.  The look of GitHubDHC is different enough from the original theme that I decided to start a new fork based on Vladimir's really nicely done Obsidian GitHub Theme -- it's worth checking out - he did all the initial work and the Kanban theme'ing - it's really good.  
 
 I'm not a css author and I'm sure I've used some poor practices and there's probably some bugs in here (editing modes can get funky!) - but enjoy - I've been using it a ton lately and I'm really finding it difficult going back to the more normal Obsidian themes now.  I started with Vladimir's css and have relied on several other themes to help me understand how things work, as well as digging into GitHub's DHC css to understand what they were doing.
