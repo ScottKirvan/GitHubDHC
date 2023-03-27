@@ -1,7 +1,6 @@
 ![Promo](imgs/promo.png)
 # [GitHubDHC](https://github.com/ScottKirvan/GitHubDHC) - An Obsidian GitHub Dark High Contrast Theme
-<div>
-<center>
+<div align="center">
   <img align="center" src="imgs/logo.png" alt="logo" width="200" height="auto" />
   <h1>Awesome Readme Template</h1>
   
@@ -41,7 +40,6 @@
   <span> · </span>
     <a href="https://github.com/ScottKirvan/GitHubDHC/issues/">Request Feature</a>
   </h4>
-</center>
 </div> 
 I do a lot of writing in Markdown, mostly for things that I'm doing up on [GitHub](https://github.com/) ([Obsidian](https://obsidian.md/) is an awesome editor for this).  I was running into some frustration with the formatting not mapping really well between Obsidian and GitHub, when I thought, "there has to be a theme for this!"  I found [@krios2146's](https://github.com/krios2146) [Obsidian GIthub Theme](https://github.com/krios2146/obsidian-theme-github).  
 <center><img src="imgs/logo.png"></center>
