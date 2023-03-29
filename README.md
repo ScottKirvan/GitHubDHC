@@ -67,7 +67,12 @@ Current settings include:
 - Colorblind colorscheme variants
 
 ## How to Install
-I hope to have it available soon on the Obsidian theme store.
+### Obsidian Marketplace (Recommended)
+1.  Open the **Settings** in Obsidian
+2.  Navigate to **Appearances** tab under **Options**
+3.  Under the **Themes** section, click on the `Manage` button across from **Themes**
+4.  Search for `GitHubDHC` in the Filter text input
+5.  Click `Use` and then you're done! 🎉
 
 ### Manual Install
 1.  Download and unzip (or clone) this repo into your vault's `/.obsidian/themes` directory (if that directly doesn't exist yet, create it)
