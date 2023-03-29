@@ -40,7 +40,7 @@ I'm not a css creator and I'm sure I've used some poor practices and there's pro
 
 This theme DOES NOT support Obsidian's light color scheme, and I'm not sure if any of the Vladimir's original colorblind colorschemes are still working or not.  I welcome the help from anyone that wants to work on this stuff, plus, GitHub uses a lot of fun style tricks in their page rendering that would be cool to see implemented.
 
-## Preview
+## Screenshots
 <details><summary> Screenshots </summary>
 <ul>
 <li><img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/screenshots/GHDC1.png?raw=true"></li>
@@ -49,24 +49,7 @@ This theme DOES NOT support Obsidian's light color scheme, and I'm not sure if a
 </ul>
 </details>
 
-
-
-## Features
- - [Kanban](https://github.com/mgmeyers/obsidian-kanban) board has been styled to look like a GitHub Projects
- - Callouts in GitHub style
- - Inline code blocks in GitHub style
- - Obsidian UI buttons in GitHub style
-
-## Theme Settings
-Theme settings can be found in the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
-
-Current settings include:
-- Header colors
-- On/Off kanban styles
-- On/Off callout styles
-- Colorblind colorscheme variants
-
-## How to Install
+## Installation
 ### Obsidian Marketplace (Recommended)
 1.  Open the **Settings** in Obsidian
 2.  Navigate to **Appearances** tab under **Options**
@@ -82,17 +65,23 @@ Current settings include:
 5. Click the reset button for the **Accent color**, and set your preferred **Zoom level**. 
 6. That's it!  You're set up - Enjoy! 
 
-## Contributing
-For any bugs or ideas for new features, please submit a [New Issue](https://github.com/ScottKirvan/GitHubDHC/issues) .  The best way to contribute directly is to make the changes yourself and submit them as a [New Pull Request](https://github.com/ScottKirvan/GitHubDHC/pulls).  Thank you!
+## Theme Settings
+Theme settings can be found in the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+
+Current settings include:
+- Header colors
+- On/Off kanban styles
+- On/Off callout styles
+- Colorblind colorscheme variants
+
+## Feedback
+For any bugs or ideas for new features, please submit a [New Issue](https://github.com/ScottKirvan/GitHubDHC/issues) .  The best way to contribute directly is to make the changes yourself and submit them as a [New Pull Request](https://github.com/ScottKirvan/GitHubDHC/pulls).  Have a quesiton? Join the [Obsidian Members Group (OMG)](https://discord.gg/obsidianmd) Discord server - I'm @cptvideo - reach out and say, "hi!" 👋
 
 ## Credits
 A huge thank you and all creds due to  [@krios2146](https://github.com/krios2146) and his [Obsidian GitHub Theme](https://github.com/krios2146/obsidian-theme-github).
 
 Vladimir Kidyaev (2022-2023)  
 Scott Kirvan (2023)  
-
-## Contact
-Feel free to reach out to me on the [Obsidian Members Group (OMG)](https://discord.gg/obsidianmd) Discord server - I'm @cptvideo
 
 Project Link:  https://github.com/ScottKirvan/GitHubDHC
 If you're writing markdown, and not using *Obsidian*, check it out:  https://obsidian.md/
