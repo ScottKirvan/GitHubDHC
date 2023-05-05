@@ -90,7 +90,8 @@ For any bugs or ideas for new features, please submit a [New Issue](https://gith
 A huge thank you and all creds due to  [@krios2146](https://github.com/krios2146) and his [Obsidian GitHub Theme](https://github.com/krios2146/obsidian-theme-github).
 
 Vladimir Kidyaev (2022-2023)  
-Scott Kirvan (2023)  
+This code includes modifications by Scott Kirvan. Modifications (c) Scott Kirvan  
+All rights reserved  
 
 Project Link:  <https://github.com/ScottKirvan/GitHubDHC>  
 If you're writing markdown, and not using *Obsidian*, check it out:  <https://obsidian.md/>  
