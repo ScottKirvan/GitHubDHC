@@ -95,3 +95,6 @@ All rights reserved
 
 Project Link:  <https://github.com/ScottKirvan/GitHubDHC>  
 If you're writing markdown, and not using *Obsidian*, check it out:  <https://obsidian.md/>  
+
+
+> **Warning** This is an asset exported from **Unreal Engine 5.2 Preview 1** and uses the experimental Substrate Shading Subsystem.  No compatibility, forwards or backwards should be assumed. :-)
