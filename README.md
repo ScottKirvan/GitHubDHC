@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/promo.png?raw=true" alt="promo" height="auto" />
+  <img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/promo.png?raw=true" alt="promo" height="auto" />
   <h1><a href="https://github.com/ScottKirvan/GitHubDHC">GitHubDHC</a></h1>
   <h3>A GitHub Dark High Contrast theme for Obsidian!</h3> 
   
@@ -20,7 +20,7 @@
   <a href="https://github.com/ScottKirvan/GitHubDHC/issues/">
     <img src="https://img.shields.io/github/issues/ScottKirvan/GitHubDHC" alt="open issues" />
   </a>
-  <a href="https://github.com/ScottKirvan/GitHubDHC/blob/master/LICENSE">
+  <a href="https://github.com/ScottKirvan/GitHubDHC/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/ScottKirvan/GitHubDHC.svg" alt="license" />
   </a>
 </p>
@@ -44,9 +44,9 @@ This theme DOES NOT support Obsidian's light color scheme, and I'm not sure if a
 
 <details><summary> Screenshots </summary>
 <ul>
-<img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/screenshots/GHDC1.png?raw=true">  
-<img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/screenshots/GHDC2.png?raw=true">  
-<img src="https://github.com/ScottKirvan/GitHubDHC/blob/master/imgs/screenshots/settings.png?raw=true">  
+<img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/screenshots/GHDC1.png?raw=true">  
+<img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/screenshots/GHDC2.png?raw=true">  
+<img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/screenshots/settings.png?raw=true">  
 </ul>
 </details>
 
