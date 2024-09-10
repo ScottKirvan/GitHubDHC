@@ -56,9 +56,10 @@ This theme DOES NOT support Obsidian's light color scheme, and I'm not sure if a
 
 1. Open the **Settings** in Obsidian
 2. Navigate to **Appearances** tab under **Options**
-3. Under the **Themes** section, click on the `Manage` button across from **Themes**
-4. Search for `GitHubDHC` in the Filter text input
-5. Click `Use` and then you're done! 🎉
+3. Set **Base color scheme** to `Dark`
+4. Under the **Themes** section, click on the `Manage` button across from **Themes**
+5. Search for `GitHubDHC` in the Filter text input
+6. Click `Use` and then you're done! 🎉
 
 ### Manual Install
 
