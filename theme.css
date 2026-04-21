@@ -1913,20 +1913,16 @@ DOCUMENT CONTAINER - Full-width with side margins and border
     --file-line-width: 85%;
 }
 
-/* Scoped to markdown note views only — canvas cards use the same classes
-   but must NOT inherit these document-layout styles. */
+/* Always apply — GitHub-style bordered document container */
 .workspace-leaf-content[data-type="markdown"] .markdown-preview-sizer,
 .workspace-leaf-content[data-type="markdown"] .cm-sizer {
     padding: 32px;
-    margin-left: 54px;
-    /* ~3/4 inch from left edge */
-    margin-right: 54px;
-    /* ~3/4 inch from right edge */
-    max-width: calc(85% - 108px);
-    /* 85% width minus left/right margins */
+    margin-left: 14px;
+    margin-right: 14px;
     border: 1px solid var(--color-base-50);
     border-radius: 6px;
 }
+
 
 /* Scoped to markdown note views — canvas nodes manage their own width */
 .workspace-leaf-content[data-type="markdown"] .cm-content,
