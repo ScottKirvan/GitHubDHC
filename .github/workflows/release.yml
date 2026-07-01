@@ -4,28 +4,66 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+  models: read
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
         with:
-          # this assumes that you have created a personal access token
-          # (PAT) and configured it as a GitHub action secret named
-          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
-          # token: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ github.token }}
           config-file: .github/release-please/release-please-config.json
           manifest-file: .github/release-please/.release-please-manifest.json
-          # this is a built-in strategy in release-please, see "Action Inputs"
-          # for more options
-          # release-type: simple
 
-          
+  upload-assets:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
+      - name: Upload release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload ${{ needs.release-please.outputs.tag_name }} \
+            theme.css manifest.json
+
+  improve-release-notes:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    uses: ScottKirvan/.github/.github/workflows/reusable-release-notes.yml@main
+    with:
+      tag_name: ${{ needs.release-please.outputs.tag_name }}
+      project_name: "GitHubDHC"
+      project_context: "GitHubDHC is an Obsidian theme inspired by the GitHub Dark High Contrast theme, providing a high-contrast dark interface for Obsidian."
+      header: |
+        ## GitHubDHC
+
+        > A high-contrast dark theme for Obsidian, inspired by GitHub's Dark High Contrast interface.
+
+        ---
+      footer: |
+        ---
+        📖 [User Guide](https://www.scottkirvan.com/GitHubDHC/) · 💬 [Discord](https://discord.gg/TN6XJSNK5Y) · 🐛 [Report a Bug](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=bug_report.md) · ✨ [Request Feature](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=feature_request.md)
+    secrets: inherit
+
+  discord-notify:
+    needs: [upload-assets, improve-release-notes]
+    if: ${{ needs.release-please.outputs.release_created }}
+    uses: ScottKirvan/.github/.github/workflows/reusable-discord-notify.yml@main
+    with:
+      tag_name: ${{ needs.release-please.outputs.tag_name }}
+      project_name: "GitHubDHC"
+      emoji: "🎨"
+    secrets: inherit
