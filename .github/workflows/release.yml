@@ -58,6 +58,13 @@ jobs:
         📖 [User Guide](https://www.scottkirvan.com/GitHubDHC/) · 💬 [Discord](https://discord.gg/TN6XJSNK5Y) · 🐛 [Report a Bug](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=bug_report.md) · ✨ [Request Feature](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=feature_request.md)
     secrets: inherit
 
+  update-changelog-prs:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    uses: ScottKirvan/.github/.github/workflows/reusable-update-changelog-prs.yml@main
+    with:
+      tag_name: ${{ needs.release-please.outputs.tag_name }}
+
   discord-notify:
     needs: [upload-assets, improve-release-notes]
     if: ${{ needs.release-please.outputs.release_created }}
