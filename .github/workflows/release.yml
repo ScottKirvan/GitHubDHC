@@ -66,7 +66,7 @@ jobs:
       tag_name: ${{ needs.release-please.outputs.tag_name }}
 
   discord-notify:
-    needs: [upload-assets, improve-release-notes]
+    needs: [release-please, upload-assets, improve-release-notes]
     if: ${{ needs.release-please.outputs.release_created }}
     uses: ScottKirvan/.github/.github/workflows/reusable-discord-notify.yml@main
     with:
