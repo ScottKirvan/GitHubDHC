@@ -18,6 +18,8 @@
 * add update-changelog-prs job and CHANGELOG link in README ([40fb57a](https://github.com/ScottKirvan/GitHubDHC/commit/40fb57aeee5432c9a6413619a314af53450c46ab))
 * stop overriding .cm-line box model on headings, breaking cursor placement ([9abe097](https://github.com/ScottKirvan/GitHubDHC/commit/9abe097be3f5a1e339cdfc67753e8bfe8845e0f1)), closes [#10](https://github.com/ScottKirvan/GitHubDHC/issues/10)
 
+Includes PRs: [#18](https://github.com/ScottKirvan/GitHubDHC/pull/18), [#19](https://github.com/ScottKirvan/GitHubDHC/pull/19), [#20](https://github.com/ScottKirvan/GitHubDHC/pull/20)
+
 ## [2.1.3](https://github.com/ScottKirvan/GitHubDHC/compare/v2.1.2...2.1.3) (2026-05-15)
 
 
