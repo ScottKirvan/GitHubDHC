@@ -104,6 +104,6 @@ When making changes to the template initialization workflow, test by:
 
 Feel free to open an issue for questions or reach out via:
 - [LinkedIn](https://www.linkedin.com/in/scottkirvan/)
-- [Discord](https://discord.gg/TSKHvVFYxB)
+- [Discord](https://discord.gg/TN6XJSNK5Y)
 
 Thank you for your contributions!
