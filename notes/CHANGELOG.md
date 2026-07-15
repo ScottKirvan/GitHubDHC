@@ -11,6 +11,8 @@
 
 * correct Discord invite link ([a35db2b](https://github.com/ScottKirvan/GitHubDHC/commit/a35db2bf2adee9311332d4038c274cb7d6a2fdce))
 
+Includes PRs: [#21](https://github.com/ScottKirvan/GitHubDHC/pull/21), [#22](https://github.com/ScottKirvan/GitHubDHC/pull/22)
+
 ## [2.2.0](https://github.com/ScottKirvan/GitHubDHC/compare/2.1.3...2.2.0) (2026-07-14)
 
 
