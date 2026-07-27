@@ -6,6 +6,7 @@ on:
       - main
   workflow_dispatch:
 
+
 permissions:
   contents: write
   pull-requests: write
@@ -46,16 +47,17 @@ jobs:
     with:
       tag_name: ${{ needs.release-please.outputs.tag_name }}
       project_name: "GitHubDHC"
-      project_context: "GitHubDHC is an Obsidian theme inspired by the GitHub Dark High Contrast theme, providing a high-contrast dark interface for Obsidian."
+      project_context: "GitHubDHC is a high-contrast dark theme for Obsidian, designed for users who want a clean, precise visual environment for reading and writing. It brings GitHub's Dark High Contrast palette to Obsidian's interface. Changes typically affect readability, element contrast, or how specific UI components look — write in terms of how the user's visual experience improves."
       header: |
         ## GitHubDHC
 
         > A high-contrast dark theme for Obsidian, inspired by GitHub's Dark High Contrast interface.
 
+        🫶❤️[Support this project](https://ko-fi.com/ScottKirvan) · 📖 [User Guide](https://www.scottkirvan.com/GitHubDHC/) · 💬 [Discord](https://discord.gg/TN6XJSNK5Y) · 🐛 [Report a Bug](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=bug_report.md) · ✨ [Request Feature](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=feature_request.md) · 📋 [Changelog](https://github.com/ScottKirvan/GitHubDHC/blob/main/notes/CHANGELOG.md)
+
         ---
-      footer: |
-        ---
-        📖 [User Guide](https://www.scottkirvan.com/GitHubDHC/) · 💬 [Discord](https://discord.gg/TN6XJSNK5Y) · 🐛 [Report a Bug](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=bug_report.md) · ✨ [Request Feature](https://github.com/ScottKirvan/GitHubDHC/issues/new?template=feature_request.md)
+      footer: ""
+      changelog_path: ""
     secrets: inherit
 
   update-changelog-prs:
