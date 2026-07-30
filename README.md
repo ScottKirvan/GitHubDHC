@@ -45,7 +45,6 @@ It was close, but not really the way *my* GitHub looks (I use the GitHub Dark Hi
     - Form elements (dropdowns, inputs) now match GitHub styling
 - **GitHub-Style Callouts**
 - **Improved Typography**: Bold navigation items and better text hierarchy
-## Screenshots
 
 <details><summary><h2> Screenshots </h2></summary>
 <ul>
