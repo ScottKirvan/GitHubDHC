@@ -1,4 +1,4 @@
-# GitHubDHC [![starline](https://starlines.qoo.monster/assets/ScottKirvan/GitHubDHC)](https://github.com/qoomon/starline)
+﻿# GitHubDHC [![starline](https://raw.githubusercontent.com/ScottKirvan/GitHubDHC/refs/heads/starlines/ScottKirvan/GitHubDHC/starline.svg)](https://github.com/qoomon/starlines)
 <div align="center">
   <img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/promo.png?raw=true" alt="promo" height="auto" />
   <h1><a href="https://github.com/ScottKirvan/GitHubDHC">GitHubDHC</a></h1>
