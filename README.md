@@ -47,7 +47,7 @@ It was close, but not really the way *my* GitHub looks (I use the GitHub Dark Hi
 - **Improved Typography**: Bold navigation items and better text hierarchy
 ## Screenshots
 
-<details><summary> Screenshots </summary>
+<details><summary><h2> Screenshots </h2></summary>
 <ul>
 <img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/screenshots/GHDC1.png?raw=true">  
 <img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/screenshots/GHDC2.png?raw=true">  
