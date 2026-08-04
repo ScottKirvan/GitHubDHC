@@ -867,12 +867,12 @@ body {
     --canvas-dot-pattern: #3d444d;
     --canvas-card-label-color: var(--color-base-70);
     /* RGB triplets required — Obsidian uses rgba(var(--canvas-color-N), alpha) */
-    --canvas-color-1: 255, 148, 146;    /* #ff9492 red   */
-    --canvas-color-2: 255, 166, 87;     /* #ffa657 orange */
-    --canvas-color-3: 240, 183, 47;     /* #f0b72f yellow */
-    --canvas-color-4: 43, 216, 83;      /* #2bd853 green  */
-    --canvas-color-5: 165, 214, 255;    /* #a5d6ff cyan   */
-    --canvas-color-6: 210, 168, 255;    /* #d2a8ff purple */
+    --canvas-color-1: rgb(255, 148, 146);    /* #ff9492 red   */
+    --canvas-color-2: rgb(255, 166, 87);     /* #ffa657 orange */
+    --canvas-color-3: rgb(240, 183, 47);     /* #f0b72f yellow */
+    --canvas-color-4: rgb(43, 216, 83);      /* #2bd853 green  */
+    --canvas-color-5: rgb(165, 214, 255);    /* #a5d6ff cyan   */
+    --canvas-color-6: rgb(210, 168, 255);    /* #d2a8ff purple */
 }
 
 /*
@@ -1024,12 +1024,12 @@ body {
     --canvas-dot-pattern: #afb8c1;
     --canvas-card-label-color: var(--color-base-70);
     /* RGB triplets required — Obsidian uses rgba(var(--canvas-color-N), alpha) */
-    --canvas-color-1: 207, 34, 46;      /* #cf222e red   */
-    --canvas-color-2: 188, 76, 0;       /* #bc4c00 orange */
-    --canvas-color-3: 154, 103, 0;      /* #9a6700 yellow */
-    --canvas-color-4: 26, 127, 55;      /* #1a7f37 green  */
-    --canvas-color-5: 9, 105, 218;      /* #0969da cyan   */
-    --canvas-color-6: 130, 80, 223;     /* #8250df purple */
+    --canvas-color-1: rgb(207, 34, 46);      /* #cf222e red   */
+    --canvas-color-2: rgb(188, 76, 0);       /* #bc4c00 orange */
+    --canvas-color-3: rgb(154, 103, 0);      /* #9a6700 yellow */
+    --canvas-color-4: rgb(26, 127, 55);      /* #1a7f37 green  */
+    --canvas-color-5: rgb(9, 105, 218);      /* #0969da cyan   */
+    --canvas-color-6: rgb(130, 80, 223);     /* #8250df purple */
 }
 
 /*
@@ -1955,28 +1955,28 @@ svg.canvas-background circle {
 
 /* Colored card variants — border uses full color, background uses 10% alpha tint */
 .canvas-node[data-color="1"] .canvas-node-container {
-    border-color: rgb(var(--canvas-color-1));
-    background-color: rgba(var(--canvas-color-1), 0.1);
+    border-color: var(--canvas-color-1);
+    background-color: color-mix(in srgb, var(--canvas-color-1) 10%, transparent);
 }
 .canvas-node[data-color="2"] .canvas-node-container {
-    border-color: rgb(var(--canvas-color-2));
-    background-color: rgba(var(--canvas-color-2), 0.1);
+    border-color: var(--canvas-color-2);
+    background-color: color-mix(in srgb, var(--canvas-color-2) 10%, transparent);
 }
 .canvas-node[data-color="3"] .canvas-node-container {
-    border-color: rgb(var(--canvas-color-3));
-    background-color: rgba(var(--canvas-color-3), 0.1);
+    border-color: var(--canvas-color-3);
+    background-color: color-mix(in srgb, var(--canvas-color-3) 10%, transparent);
 }
 .canvas-node[data-color="4"] .canvas-node-container {
-    border-color: rgb(var(--canvas-color-4));
-    background-color: rgba(var(--canvas-color-4), 0.1);
+    border-color: var(--canvas-color-4);
+    background-color: color-mix(in srgb, var(--canvas-color-4) 10%, transparent);
 }
 .canvas-node[data-color="5"] .canvas-node-container {
-    border-color: rgb(var(--canvas-color-5));
-    background-color: rgba(var(--canvas-color-5), 0.1);
+    border-color: var(--canvas-color-5);
+    background-color: color-mix(in srgb, var(--canvas-color-5) 10%, transparent);
 }
 .canvas-node[data-color="6"] .canvas-node-container {
-    border-color: rgb(var(--canvas-color-6));
-    background-color: rgba(var(--canvas-color-6), 0.1);
+    border-color: var(--canvas-color-6);
+    background-color: color-mix(in srgb, var(--canvas-color-6) 10%, transparent);
 }
 
 /* Group containers */
@@ -1999,9 +1999,9 @@ svg.canvas-background circle {
 }
 
 /* Colored edges — parent <g> gets mod-canvas-color-N, child path is canvas-display-path */
-.mod-canvas-color-1 path.canvas-display-path { stroke: rgb(var(--canvas-color-1)); }
-.mod-canvas-color-2 path.canvas-display-path { stroke: rgb(var(--canvas-color-2)); }
-.mod-canvas-color-3 path.canvas-display-path { stroke: rgb(var(--canvas-color-3)); }
-.mod-canvas-color-4 path.canvas-display-path { stroke: rgb(var(--canvas-color-4)); }
-.mod-canvas-color-5 path.canvas-display-path { stroke: rgb(var(--canvas-color-5)); }
-.mod-canvas-color-6 path.canvas-display-path { stroke: rgb(var(--canvas-color-6)); }
+.mod-canvas-color-1 path.canvas-display-path { stroke: var(--canvas-color-1); }
+.mod-canvas-color-2 path.canvas-display-path { stroke: var(--canvas-color-2); }
+.mod-canvas-color-3 path.canvas-display-path { stroke: var(--canvas-color-3); }
+.mod-canvas-color-4 path.canvas-display-path { stroke: var(--canvas-color-4); }
+.mod-canvas-color-5 path.canvas-display-path { stroke: var(--canvas-color-5); }
+.mod-canvas-color-6 path.canvas-display-path { stroke: var(--canvas-color-6); }
