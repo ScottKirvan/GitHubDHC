@@ -96,7 +96,6 @@ A huge thank you and all creds due to  [@krios2146](https://github.com/krios2146
 
 Vladimir Kidyaev (2022-2023)  
 This code includes modifications by Scott Kirvan. Modifications (c) 2026 Scott Kirvan  
-All rights reserved  
 Contributors:  [@saberzero1](https://github.com/saberzero1) (Obsidian [community reviewer](https://obsidian.md/help/credits#Community+review))
 
 Project Link:  <https://github.com/ScottKirvan/GitHubDHC>  
