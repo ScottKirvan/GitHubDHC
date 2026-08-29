@@ -101,7 +101,7 @@ jobs:
 
         ---
       footer: ""
-      changelog_path: ""
+      changelog_path: "notes/CHANGELOG.md"
     secrets: inherit
 
   update-changelog-prs:
