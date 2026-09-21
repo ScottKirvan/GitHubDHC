@@ -189,7 +189,7 @@ settings:
 
 body {
     /*───────── Fonts ──────────*/
-    --font-sans: -apple-system BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
         Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
     --font-mono: 'DM Mono', 'Fira Code', Courier, monospace;
 
