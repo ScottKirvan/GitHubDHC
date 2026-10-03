@@ -9,11 +9,11 @@
 
 ### Bug Fixes
 
-* add changelog link to release and staging footers ([371b473](https://github.com/ScottKirvan/GitHubDHC/commit/371b473a329ec007363e9994125eab7ea706a850))
-* add missing comma after -apple-system in the --font-sans stack ([dc8b301](https://github.com/ScottKirvan/GitHubDHC/commit/dc8b3018c5700b89d0cddfb468de06f17185f6e1))
-* add VitePress local search provider to docs ([bd060ae](https://github.com/ScottKirvan/GitHubDHC/commit/bd060ae80d82c00d012ec890381d2a5d39a83d44))
-* drop redundant 'All rights reserved' from credits ([518a524](https://github.com/ScottKirvan/GitHubDHC/commit/518a52462c030469fc3fa1bd758ef2b924d9ba25))
-* stop overriding plugin icon buttons with blanket button styles ([18ee6d9](https://github.com/ScottKirvan/GitHubDHC/commit/18ee6d9f77cf7bc3dce5122633a91955383bbde6))
+* add changelog link to release and staging footers ([#34](https://github.com/ScottKirvan/GitHubDHC/pull/34))
+* add missing comma after -apple-system in the --font-sans stack ([#36](https://github.com/ScottKirvan/GitHubDHC/pull/36))
+* add VitePress local search provider to docs ([#37](https://github.com/ScottKirvan/GitHubDHC/pull/37))
+* drop redundant 'All rights reserved' from credits ([#33](https://github.com/ScottKirvan/GitHubDHC/pull/33))
+* stop overriding plugin icon buttons with blanket button styles ([#38](https://github.com/ScottKirvan/GitHubDHC/pull/38))
 
 ## [2.3.0](https://github.com/ScottKirvan/GitHubDHC/compare/2.2.1...2.3.0) (2026-08-04)
 
