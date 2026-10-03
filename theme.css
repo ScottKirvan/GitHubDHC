@@ -1129,26 +1129,13 @@ body.colorblind_tritan.theme-light {
    BUTTONS
    ───────────────────────────────────────────────────────────────────────── */
 
-/* Base styles for all button types */
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
-    border: 1px solid var(--background-modifier-border);
-    background-color: var(--interactive-normal);
-    color: var(--text-normal);
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-    cursor: var(--cursor-link);
-    background-color: var(--interactive-hover);
-    border-color: var(--background-modifier-border-hover);
-    box-shadow: 0 0 0 2px var(--background-modifier-border);
-}
+/* Default and secondary buttons are styled through Obsidian's own variables
+   (--interactive-normal / --interactive-hover for the fill, --input-shadow /
+   --input-shadow-hover for the border, set per theme above), not through
+   blanket `button` rules. Obsidian applies those variables with low-specificity
+   selectors that leave icon buttons (.clickable-icon) and plugin-styled buttons
+   alone; a theme-wide `button { ... }` rule would paint grey boxes and borders
+   onto every plugin's icon buttons. Only the green primary button is overridden. */
 
 /* Primary buttons (green) */
 button.mod-cta,
@@ -1162,23 +1149,6 @@ button.mod-cta:hover,
 input[type="submit"].mod-cta:hover {
     background-color: var(--color-btn-primary-hover-bg);
     border-color: var(--color-btn-primary-hover-bg);
-}
-
-/* Secondary buttons - explicit styling for non-cta buttons */
-button:not(.mod-cta):not(.mod-warning):not(.mod-destructive),
-input[type="button"]:not(.mod-cta),
-input[type="reset"]:not(.mod-cta) {
-    background-color: var(--interactive-normal);
-    color: var(--text-normal);
-    border: 1px solid var(--background-modifier-border);
-}
-
-button:not(.mod-cta):not(.mod-warning):not(.mod-destructive):hover,
-input[type="button"]:not(.mod-cta):hover,
-input[type="reset"]:not(.mod-cta):hover {
-    background-color: var(--interactive-hover);
-    border-color: var(--background-modifier-border-hover);
-    box-shadow: 0 0 0 2px var(--background-modifier-border);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
