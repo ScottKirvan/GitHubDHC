@@ -1,6 +1,6 @@
 # GitHubDHC QA
 
-Automated checks for the theme, adapted from the [Tela theme's](https://github.com/rbartoli/obsidian-tela-theme) QA harness (MIT, see [`LICENSE-tela`](LICENSE-tela)). See [#39](https://github.com/ScottKirvan/GitHubDHC/issues/39).
+Automated checks for the theme, adapted from [Riccardo Bartoli's](https://github.com/rbartoli) QA harness for the [Tela theme](https://github.com/rbartoli/obsidian-tela-theme) (MIT, see [`LICENSE-tela`](LICENSE-tela)), as described in [How I check every screen of my Obsidian theme](https://rblab.com/how-i-check-every-screen-of-my-obsidian-theme/). See [#39](https://github.com/ScottKirvan/GitHubDHC/issues/39).
 
 - **`npm run qa`**: opens the demo vault in a throwaway Obsidian and renders every scene in [`scenes.mjs`](scenes.mjs) in dark and light, on desktop, phone and tablet. Every screen gets an [axe](https://github.com/dequelabs/axe-core) audit: text must reach WCAG AA contrast (4.5:1, or 3:1 for large text), and links must stand out from the text around them by more than colour alone. Any violation fails the run.
 - **`npm run drift`**: checks an Obsidian release for changes that would quietly break the theme: a variable the theme sets that Obsidian no longer reads, one it reads that Obsidian no longer defines, or a class the theme styles that Obsidian no longer uses. It also reports changed defaults against [`obsidian-baseline.json`](obsidian-baseline.json).
