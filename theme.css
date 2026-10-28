@@ -1373,6 +1373,23 @@ body.headers-one-color {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   NOTEBOOK NAVIGATOR PLUGIN
+
+   The plugin fades secondary text (dates, task counts, tags, folders,
+   properties, word counts) to 50% of --text-normal, which is below 4.5:1
+   on white. GitHub's weakest text colour is fgColor-muted.
+   ───────────────────────────────────────────────────────────────────────── */
+
+body.theme-light {
+    --nn-theme-file-date-color: var(--color-base-60);
+    --nn-theme-file-parent-color: var(--color-base-60);
+    --nn-theme-file-property-color: var(--color-base-60);
+    --nn-theme-file-tag-color: var(--color-base-60);
+    --nn-theme-file-word-count-color: var(--color-base-60);
+    /* fgColor-muted #59636e */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    KANBAN PLUGIN INTEGRATION
 
    Styles for the Kanban plugin to match GitHub Projects aesthetic.
