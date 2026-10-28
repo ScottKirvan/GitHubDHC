@@ -43,6 +43,7 @@ cd qa && npm install          # once
 npm run qa                    # full audit: every scene, desktop/phone/tablet, dark/light
 npm run qa -- --device desktop --mode dark --scene reading   # quick run
 npm run drift                 # newest Obsidian release vs. the baseline
+npm test                      # unit tests for the harness (no Obsidian needed)
 cd docs && npm run docs:dev   # user guide locally
 ```
 
@@ -97,8 +98,8 @@ hand. Commit types drive the version: `fix:` → patch, `feat:` → minor, `!` �
 - CI, lint, and formatting must all pass before committing or opening a PR. Discover
   the project's commands from the CI config, `package.json`, `Makefile`, or equivalent
   — do not assume they match another project's toolchain. Here that means `npm run qa`
-  in `qa/` for any change to `theme.css` (the `qa.yml` check); there is no linter or
-  formatter configured yet.
+  in `qa/` for any change to `theme.css`, and `npm test` in `qa/` for any change to the
+  harness (both run in `qa.yml`); there is no linter or formatter configured yet.
 - Prefer narrow, localised changes. Favour modularity that contains the blast radius
   of future edits — a fix or feature should not require touching unrelated parts of
   the codebase. If it does, that's a design signal worth surfacing.

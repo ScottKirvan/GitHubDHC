@@ -81,6 +81,14 @@ The audit can't judge text on images, accent colours a user picks, plugins outsi
 
 Add an entry to `scenes` in `scenes.mjs`. The comment above the list explains each field. If the scene needs a note, add it to `vault/`. Plugin settings go in `fixtures/plugins/<id>/data.json`.
 
+## Testing the harness
+
+```bash
+npm test
+```
+
+Unit tests for the parts that don't need Obsidian: the CSS scanning and drift checks in `drift.mjs`, the report grouping in `summary.mjs`, the helpers in `obsidian.mjs`, and a check that `styleSettings` and `settingClasses` in `scenes.mjs` match the `@settings` block in `theme.css`. They run in CI alongside the audit.
+
 ## Checking a new Obsidian release
 
 ```bash

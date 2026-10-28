@@ -40,20 +40,11 @@ import { settingClasses } from './scenes.mjs'
 const root = resolve(import.meta.dirname, '..')
 const KINDS = ['sets', 'reads', 'selectors']
 
-const { values: opt } = parseArgs({
-	options: {
-		obsidian: { type: 'string' },
-		baseline: { type: 'string', default: join(root, 'qa', 'obsidian-baseline.json') },
-		'update-baseline': { type: 'boolean', default: false },
-		report: { type: 'string' },
-	},
-})
-
 // A stylesheet's rule preludes and declarations, each declaration with the
 // selectors and at-rules around it. Comments are dropped; strings and
 // bracketed groups are kept whole, so a data URI or an :is() list can't end a
 // rule early.
-function scan(css) {
+export function scan(css) {
 	const preludes = []
 	const decls = []
 	const stack = []
@@ -108,8 +99,8 @@ const byName = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
 
 // The Obsidian variables, classes and attributes theme.css relies on, leaving
 // out the theme's own (its Style Settings classes and variables).
-function themeUses() {
-	const { preludes, decls } = scan(readFileSync(join(root, 'theme.css'), 'utf8'))
+export function themeUses(css = readFileSync(join(root, 'theme.css'), 'utf8')) {
+	const { preludes, decls } = scan(css)
 	const sets = new Set(decls.map((d) => d.name).filter((n) => n.startsWith('--')))
 	const reads = new Set(decls.flatMap((d) => refs(d.value)).filter((v) => !sets.has(v)))
 	const selectors = new Set()
@@ -125,9 +116,9 @@ function themeUses() {
 // What a release offers the theme: app.css's custom properties by scope, the
 // variables app.css reads, and the words in app.css and app.js (class,
 // attribute and variable names all survive minification as strings).
-function appIndex(asar) {
-	const css = extractFile(asar, 'app.css').toString()
-	const js = extractFile(asar, 'app.js').toString()
+const appIndex = (asar) => indexApp(extractFile(asar, 'app.css').toString(), extractFile(asar, 'app.js').toString())
+
+export function indexApp(css, js) {
 	const { decls } = scan(css)
 	const defaults = new Map()
 	for (const d of decls.filter((d) => d.name.startsWith('--'))) {
@@ -143,7 +134,7 @@ function appIndex(asar) {
 }
 
 // Whether the release still has what the theme uses it for.
-function has(app, kind, token) {
+export function has(app, kind, token) {
 	if (kind === 'sets') return app.reads.has(token) || app.jsWords.has(token)
 	if (kind === 'reads') return app.defaults.has(token) || app.jsWords.has(token)
 	const name = token.replace(/^[.[]|\]$/g, '')
@@ -170,7 +161,7 @@ function chains(app, uses) {
 	return behind
 }
 
-function certify(version, app, uses) {
+export function certify(version, app, uses) {
 	const tracked = {}
 	const unknown = []
 	for (const kind of KINDS) {
@@ -185,7 +176,7 @@ function certify(version, app, uses) {
 	return { obsidian: version, uses: tracked, unknown: unknown.sort(byName), defaults, accepted: traps(app, uses).map((t) => t.key) }
 }
 
-function check(app, uses, base) {
+export function check(app, uses, base) {
 	const tracked = new Set(KINDS.flatMap((kind) => base.uses[kind]))
 	const known = new Set([...tracked, ...base.unknown])
 	const gone = []
@@ -241,7 +232,7 @@ function split(s, at) {
 	return [...parts, s.slice(start)].map((p) => p.trim()).filter(Boolean)
 }
 
-function specificity(selector) {
+export function specificity(selector) {
 	const s = [0, 0, 0]
 	const add = (t) => t.forEach((n, i) => (s[i] += n))
 	let rest = selector.replace(/"[^"]*"|'[^']*'/g, '""').replace(/:where\((?:[^()]|\([^()]*\))*\)/g, '')
@@ -259,7 +250,7 @@ function specificity(selector) {
 
 // The element a selector styles: body, for a selector on body alone (its mode,
 // platform and state classes), else its last compound without mode classes.
-function subject(selector) {
+export function subject(selector) {
 	const parts = split(selector, /[\s>+~]/)
 	const last = parts.at(-1).replace(/:(?:not|is|where)\((?:[^()]|\([^()]*\))*\)/g, '')
 	if (parts.length === 1 && /^(body|html|:root)?(\.(theme|is|mod|show)-[\w-]+|\.(colorblind_|callout-|headers-|kanban-)[\w-]+)*$/.test(last)) return 'body'
@@ -290,7 +281,7 @@ const outranks = (a, b) => (a[0] - b[0] || a[1] - b[1] || a[2] - b[2]) > 0
 // the theme's value doesn't reach. theme.css loads after app.css, so a tie
 // goes to the theme. Declarations on a component (.is-mobile .menu) are
 // Obsidian styling that component, and declarations in at-rules are left out.
-function overrides(app, uses) {
+export function overrides(app, uses) {
 	const onBody = (scope) => (atRules(scope) ? [] : selectorsOf(scope).filter((sel) => subject(sel) === 'body'))
 	const found = []
 	for (const v of uses.sets) {
@@ -374,6 +365,14 @@ function markdown(version, base, { gone, changed, vars, modes }, uses) {
 }
 
 async function main() {
+	const { values: opt } = parseArgs({
+		options: {
+			obsidian: { type: 'string' },
+			baseline: { type: 'string', default: join(root, 'qa', 'obsidian-baseline.json') },
+			'update-baseline': { type: 'boolean', default: false },
+			report: { type: 'string' },
+		},
+	})
 	const uses = themeUses()
 	const version = await obsidianVersion(opt.obsidian)
 	const app = appIndex(await obsidianAsar(version))
@@ -401,4 +400,4 @@ async function main() {
 	if (found.gone.length) process.exitCode = 1
 }
 
-await main()
+if (process.argv[1] === import.meta.filename) await main()
