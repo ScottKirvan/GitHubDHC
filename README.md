@@ -43,9 +43,11 @@ It was close, but not really the way *my* GitHub looks (I use the GitHub Dark Hi
 - **Accurate GitHub Colors**: Uses official GitHub Primer color primitives for authentic appearance
 - **Enhanced UI Components** (for settings dialog, Obsidian UI, etc.):
     - Form elements (dropdowns, inputs) now match GitHub styling
-- **GitHub-Style Callouts**
+- **GitHub-Style Callouts**: GitHub's NOTE, TIP, IMPORTANT, WARNING and CAUTION alerts in GitHub's own colours, in dark and light mode
 - **Improved Typography**: Bold navigation items and better text hierarchy
-- **Contrast-Checked**: An automated audit checks every screen for WCAG AA text contrast in both themes, on desktop, phone and tablet, on every pull request (see [qa/README.md](qa/README.md))
+- **Accessible Contrast (WCAG AA)**: Text is easy to read in both themes. See [Accessibility](#accessibility)
+- **Colorblind Variants**: Protanopia & Deuteranopia and Tritanopia variants built on GitHub's own colorblind palettes
+- **Plugin Support**: Styled for Kanban, and checked with Dataview, Tasks, Excalidraw, Iconize and Notebook Navigator
 
 <details><summary><h2> Screenshots </h2></summary>
 <ul>
@@ -87,9 +89,23 @@ Current settings include:
 - On/Off callout styles
 - Colorblind colorscheme variants
 
+## Accessibility
+
+GitHubDHC meets the **WCAG 2.2 Level AA** contrast requirements for text, in both Dark High Contrast and Light Default:
+
+- **Readable text everywhere**: body text, headings, code, callouts, tags, menus, settings, search and sidebars all reach at least 4.5:1 contrast (3:1 for large text), the AA minimum ([SC 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)).
+- **Links you can spot**: links are underlined, headings included, so they never rely on color alone ([SC 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)).
+- **Everywhere you use Obsidian**: reading view and live preview, Canvas, Bases, printing and right-to-left text, on desktop, phone and tablet.
+- **Colorblind-friendly**: both colorblind variants meet the same contrast bar.
+- **True to GitHub**: every color comes from GitHub's own Primer design system, the palette GitHub uses for its accessible themes.
+
+Every change to the theme is checked against these requirements before it's released.
+
+A theme can only control its own colors, so a few things are outside what it can guarantee: text drawn over images, an accent color you pick yourself in Obsidian's settings, and community plugins other than those listed above.
+
 ## Feedback
 
-For any bugs or ideas for new features, please submit a [New Issue](https://github.com/ScottKirvan/GitHubDHC/issues) .  The best way to contribute directly is to make the changes yourself and submit them as a [New Pull Request](https://github.com/ScottKirvan/GitHubDHC/pulls).  If you change `theme.css`, the QA audit runs on your pull request automatically; see [CONTRIBUTING.md](CONTRIBUTING.md#testing) to run it yourself.  Have a quesiton? Join the [Obsidian Members Group (OMG)](https://discord.gg/obsidianmd) Discord server - I'm @cptvideo - reach out and say, "hi!" 👋
+For any bugs or ideas for new features, please submit a [New Issue](https://github.com/ScottKirvan/GitHubDHC/issues) .  The best way to contribute directly is to make the changes yourself and submit them as a [New Pull Request](https://github.com/ScottKirvan/GitHubDHC/pulls).  Have a quesiton? Join the [Obsidian Members Group (OMG)](https://discord.gg/obsidianmd) Discord server - I'm @cptvideo - reach out and say, "hi!" 👋
 
 ## Credits
 

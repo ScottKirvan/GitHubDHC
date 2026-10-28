@@ -24,19 +24,23 @@ features:
     title: High Contrast
     details: Designed for readability with a maximum-contrast dark color palette based on GitHub's own Dark High Contrast theme.
 
-  - icon: 🌙
-    title: Dark Mode
-    details: Full dark theme support across all of Obsidian's panels, modals, and editor views.
+  - icon: 🌗
+    title: Dark and Light
+    details: GitHub's Dark High Contrast and Light Default themes, across all of Obsidian's panels, modals, and editor views, with GitHub's own alert, code and link colors.
 
   - icon: 🔧
     title: Style Settings
     details: Customizable via the Style Settings plugin — tweak colors and fonts to your preference.
 
   - icon: ✅
-    title: Contrast Checked
-    details: An automated audit checks every screen for WCAG AA text contrast, in dark and light mode, on desktop, phone and tablet. Adapted from Riccardo Bartoli's QA harness for the Tela theme.
-    link: https://github.com/ScottKirvan/GitHubDHC/blob/main/qa/README.md
-    linkText: How it works
+    title: WCAG AA Contrast
+    details: Meets WCAG 2.2 Level AA contrast for text in both dark and light mode, on desktop, phone and tablet, with underlined links you can always spot. Every release is checked before it ships.
+    link: https://github.com/ScottKirvan/GitHubDHC#accessibility
+    linkText: Accessibility details
+
+  - icon: 👁️
+    title: Colorblind Variants
+    details: Protanopia & Deuteranopia and Tritanopia variants built on GitHub's own colorblind palettes, held to the same contrast standard.
 ---
 
 <!-- Begin Sponsors -->
