@@ -1050,22 +1050,24 @@ body {
 
 /* Protanopia & Deuteranopia - Red-Green Colorblindness */
 body.colorblind_protan-deutan.theme-dark {
-    --color-red-rgb: 253, 172, 84;
-    --color-red: #fdac54;
-    --color-green-rgb: 165, 214, 255;
-    --color-green: #a3d6ff;
-    --color-orange: #fdac54;
+    /* dark-colorblind-high-contrast: danger, success, severe */
+    --color-red-rgb: 255, 183, 87;
+    --color-red: #ffb757;
+    --color-green-rgb: 173, 220, 255;
+    --color-green: #addcff;
+    --color-orange: #fe9a2d;
 
     --color-btn-primary-bg: #1f6feb;
     --color-btn-primary-hover-bg: #388bfd;
 }
 
 body.colorblind_protan-deutan.theme-light {
-    --color-red-rgb: 179, 89, 0;
-    --color-red: #b35900;
-    --color-green-rgb: 33, 139, 255;
-    --color-green: #218bff;
-    --color-orange: #dd7815;
+    /* light-colorblind: danger, success, severe */
+    --color-red-rgb: 188, 76, 0;
+    --color-red: #bc4c00;
+    --color-green-rgb: 9, 105, 218;
+    --color-green: #0969da;
+    --color-orange: #bc4c00;
 
     --color-btn-primary-bg: #218bff;
     --color-btn-primary-hover-bg: #0969da;
@@ -1073,9 +1075,12 @@ body.colorblind_protan-deutan.theme-light {
 
 /* Tritanopia - Blue-Yellow Colorblindness */
 body.colorblind_tritan.theme-dark {
-    --color-green-rgb: 165, 214, 255;
-    --color-green: #a5d6ff;
-    --color-orange: #ffa198;
+    /* dark-tritanopia-high-contrast: danger, success, severe */
+    --color-red-rgb: 255, 148, 146;
+    --color-red: #ff9492;
+    --color-green-rgb: 145, 203, 255;
+    --color-green: #91cbff;
+    --color-orange: #ff9492;
 
     --text-highlight-bg: rgba(255, 0, 0, 0.4);
     --text-highlight-bg-active: rgba(255, 50, 0, 0.4);
@@ -1085,9 +1090,12 @@ body.colorblind_tritan.theme-dark {
 }
 
 body.colorblind_tritan.theme-light {
-    --color-green-rgb: 12, 181, 79;
-    --color-green: #218bff;
-    --color-orange: #fa4549;
+    /* light-tritanopia: danger, success, severe */
+    --color-red-rgb: 209, 36, 47;
+    --color-red: #d1242f;
+    --color-green-rgb: 9, 105, 218;
+    --color-green: #0969da;
+    --color-orange: #cf222e;
 
     --text-highlight-bg: rgba(255, 0, 0, 0.4);
     --text-highlight-bg-active: rgba(255, 50, 0, 0.4);
