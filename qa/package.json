@@ -1,0 +1,17 @@
+{
+	"name": "githubdhc-qa",
+	"private": true,
+	"description": "Screen-by-screen contrast audit and Obsidian drift check for the GitHubDHC theme",
+	"type": "module",
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"qa": "node run.mjs",
+		"drift": "node drift.mjs"
+	},
+	"devDependencies": {
+		"@electron/asar": "^4.3.1",
+		"axe-core": "^4.14.0"
+	}
+}
