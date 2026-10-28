@@ -24,6 +24,10 @@ A paragraph under a fifth-level heading.
 
 A paragraph under a sixth-level heading.
 
+### A heading with an image ![[Dusk.png|24]]
+
+A paragraph under a heading that holds an image.
+
 ## A `code` heading with a [[Properties|link]]
 
 The end.
