@@ -1000,10 +1000,18 @@ body {
     /* Darker blue on hover */
     --link-external-color: #0969da;
     --link-external-color-hover: #0550ae;
-    --link-unresolved-color: #0969da;
+    --link-unresolved-color: #0550ae;
+    /* Faded below; #0969da at that opacity fails contrast */
+    --link-unresolved-opacity: 0.85;
     --text-accent: #0969da;
     /* Override text-accent for links */
     --text-accent-hover: #0550ae;
+
+    /* Tags - GitHub topic label colors */
+    --tag-background: #ddf4ff;
+    /* bgColor-accent-muted */
+    --tag-color-hover: #0550ae;
+    /* #0969da fails contrast on the hover background */
 
     /* Toggle switches - different colors for on/off states */
     --toggle-background-color-off: var(--interactive-normal);
@@ -1387,6 +1395,18 @@ body.theme-light {
     --nn-theme-file-tag-color: var(--color-base-60);
     --nn-theme-file-word-count-color: var(--color-base-60);
     /* fgColor-muted #59636e */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   NOTICES
+
+   Obsidian draws notices near-black in both modes, so links on them keep
+   the dark theme's link blue in light mode too.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.theme-light .notice a {
+    color: #74b9ff;
+    /* Dark High Contrast fgColor-accent */
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
