@@ -1,3 +1,6 @@
 .obsidian/
 GitHubDHC.code-workspace
 notes/dev/
+qa/out/
+qa/node_modules/
+qa/drift.md

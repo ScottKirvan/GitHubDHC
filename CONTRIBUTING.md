@@ -71,9 +71,10 @@ feat!: change template initialization workflow
 
 1. Fork and clone the repository
 2. Create a new branch for your feature/fix
-3. Make your changes
-4. Test your changes by creating a new repository from your template
-5. Submit a pull request
+3. Make your changes to `theme.css`
+4. Try them in Obsidian: copy `theme.css` and `manifest.json` into a test vault's `.obsidian/themes/GitHubDHC/` folder and pick GitHubDHC in **Settings → Appearance → Themes**
+5. Run the QA audit (see [Testing](#testing))
+6. Submit a pull request
 
 ## Project Structure
 
@@ -82,23 +83,34 @@ GitHubDHC/
 ├── .github/
 │   ├── gitignore-templates/  # Example .gitignore files
 │   ├── ISSUE_TEMPLATE/       # Issue templates
-│   ├── workflows/            # GitHub Actions
+│   ├── workflows/            # GitHub Actions (release, QA audit, Obsidian canary, docs)
+│   ├── release-please/       # Release Please config
 │   └── PULL_REQUEST_TEMPLATE.md
-├── assets/                   # Images and CSS for GitHub Pages
+├── docs/                     # User guide (VitePress site)
+├── imgs/                     # README images and screenshots
 ├── notes/                    # CHANGELOG, VERSION, TODO
+├── qa/                       # QA audit and Obsidian drift check (see qa/README.md)
+│   └── vault/                # Demo vault the audit opens
+├── theme.css                 # The theme
+├── manifest.json             # Obsidian theme manifest
 ├── README.md
-├── LICENSE.md
+├── LICENSE
 └── CONTRIBUTING.md
 ```
 
 ## Testing
 
-When making changes to the template initialization workflow, test by:
+Changes to `theme.css` are checked by an automated contrast audit, which runs on every pull request to `main`. To run it yourself:
 
-1. Creating a new repository from your modified template
-2. Verifying the workflow runs successfully
-3. Checking that all repository references are updated correctly
-4. Confirming the workflow deletes itself after completion
+```bash
+cd qa
+npm install
+npm run qa
+```
+
+It opens a demo vault in a throwaway copy of Obsidian (your own vaults are never touched), renders about 40 scenes in dark and light mode on desktop, phone and tablet, and checks every screen's text contrast with [axe](https://github.com/dequelabs/axe-core). Any violation fails the run. The report and screenshots go to `qa/out/`. Use `npm run qa -- --device desktop --mode dark --scene reading` for a quick run.
+
+If you add or change an option in the `@settings` block of `theme.css`, update the matching lists in `qa/scenes.mjs`. [`qa/README.md`](qa/README.md) has the requirements, all the options, and how to add a scene.
 
 ## Questions?
 

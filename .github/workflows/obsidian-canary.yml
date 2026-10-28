@@ -1,0 +1,59 @@
+name: Obsidian canary
+
+# Checks the newest Obsidian release for changes that would quietly break the
+# theme (npm run drift), and files what it finds as an issue labelled
+# obsidian-update, updating the open one if there is one.
+#
+# Adapted from the Tela theme's workflow (MIT, see qa/LICENSE-tela).
+
+on:
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      obsidian:
+        description: 'Obsidian version (default: the newest release)'
+        required: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: qa
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: qa/package-lock.json
+      - run: npm ci
+      - name: Check the release
+        id: drift
+        continue-on-error: true
+        env:
+          OBSIDIAN: ${{ inputs.obsidian }}
+        run: npm run drift -- --report drift.md ${OBSIDIAN:+--obsidian "$OBSIDIAN"}
+      - name: File the findings
+        if: hashFiles('qa/drift.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create obsidian-update --force --color d93f0b \
+            --description 'Obsidian changed something the theme relies on'
+          title="$(head -n 1 drift.md | sed 's/^# //')"
+          issue="$(gh issue list --label obsidian-update --state open --limit 1 --json number --jq '.[0].number')"
+          if [ -n "$issue" ]; then
+            gh issue edit "$issue" --title "$title" --body-file drift.md
+          else
+            gh issue create --label obsidian-update --title "$title" --body-file drift.md
+          fi
+      - name: Fail if something the theme relies on has gone
+        if: steps.drift.outcome == 'failure'
+        run: exit 1

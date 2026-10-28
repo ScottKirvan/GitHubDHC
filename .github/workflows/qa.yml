@@ -1,0 +1,64 @@
+name: QA audit
+
+# Renders every scene in qa/scenes.mjs in a throwaway Obsidian, in dark and
+# light, on desktop, phone and tablet, and audits each screen's text contrast
+# with axe (npm run qa). Any violation fails the check. Reports, screenshots
+# and contact sheets are uploaded as the qa-report artifact.
+#
+# It runs on every pull request to main, including release-please's release
+# PR, so making it a required check blocks a release that fails the audit.
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      obsidian:
+        description: 'Obsidian version (default: the newest release)'
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: qa
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: qa/package-lock.json
+      - run: npm ci
+      - name: Install a virtual display and ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb imagemagick
+      - name: Cache Obsidian and the community plugins
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/githubdhc-qa
+          key: githubdhc-qa-${{ runner.os }}-${{ inputs.obsidian || 'latest' }}-${{ github.run_id }}
+          restore-keys: githubdhc-qa-${{ runner.os }}-${{ inputs.obsidian || 'latest' }}-
+      - name: Audit
+        env:
+          OBSIDIAN: ${{ inputs.obsidian }}
+        run: npm run qa -- --out out/report ${OBSIDIAN:+--obsidian "$OBSIDIAN"}
+      - name: Summary
+        if: always()
+        run: if [ -f out/report/report.md ]; then cat out/report/report.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa-report
+          path: qa/out/report
+          if-no-files-found: ignore
+          retention-days: 14
