@@ -1909,7 +1909,7 @@ background-color: var(--color-orange);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   LINKS - All links underlined except in headers
+   LINKS - All links underlined, headings included
    ───────────────────────────────────────────────────────────────────────── */
 
 /* All links underlined in reading mode */
@@ -1925,31 +1925,6 @@ background-color: var(--color-orange);
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link,
 .markdown-source-view.mod-cm6 a {
     text-decoration: underline !important;
-}
-
-/* Remove underline from links in headers (reading mode) */
-.markdown-rendered h1 a,
-.markdown-rendered h2 a,
-.markdown-rendered h3 a,
-.markdown-rendered h4 a,
-.markdown-rendered h5 a,
-.markdown-rendered h6 a,
-.markdown-preview-view h1 a,
-.markdown-preview-view h2 a,
-.markdown-preview-view h3 a,
-.markdown-preview-view h4 a,
-.markdown-preview-view h5 a,
-.markdown-preview-view h6 a {
-    text-decoration: none !important;
-}
-
-/* Remove underline from links in headers (editing mode) */
-.markdown-source-view.mod-cm6 .HyperMD-header .cm-link,
-.markdown-source-view.mod-cm6 .HyperMD-header .cm-underline,
-.markdown-source-view.mod-cm6 .HyperMD-header .cm-url,
-.markdown-source-view.mod-cm6 .HyperMD-header .cm-hmd-internal-link,
-.markdown-source-view.mod-cm6 .HyperMD-header a {
-    text-decoration: none !important;
 }
 
 /* Images - ensure proper spacing and display */
