@@ -63,7 +63,7 @@ It was close, but not really the way *my* GitHub looks (I use the GitHub Dark Hi
 
 1. Open the **Settings** in Obsidian
 2. Navigate to **Appearances** tab under **Options**
-3. Set **Base color scheme** to `Dark`
+3. Choose your **Base color scheme**: `Dark` for GitHub Dark High Contrast, `Light` for GitHub Light Default, or `Adapt to system` to switch with your operating system
 4. Under the **Themes** section, click on the `Manage` button across from **Themes**
 5. Search for `GitHubDHC` in the Filter text input
 6. Click `Use` and then you're done! 🎉
