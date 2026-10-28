@@ -241,9 +241,8 @@ body {
     --checklist-done-color: var(--text-muted);
     /* Code */
     --code-size: var(--font-smaller);
-    --code-background: var(--color-base-35);
+    --code-background: var(--color-base-10);
     --code-normal: var(--color-base-100);
-    --code-comment: var(--text-faint);
     --code-function: var(--color-orange);
     --code-important: var(--color-orange);
     --code-keyword: var(--color-red);
@@ -719,8 +718,6 @@ body {
     --color-base-30: #b7bdc8;
     /* borderColor-default */
     --color-base-35: #3d444d;
-    /* Code block background - darker like GitHub */
-    --code-background: #161b22;
     /* Table alternating row background */
     --table-row-alt-background: #151b23;
     /* bgColor-emphasis */
@@ -788,6 +785,8 @@ body {
     --shadow-l: none;
 
     /* Code and Headers */
+    --code-comment: #9198a1;
+    /* prettylights-syntax-comment */
     --inline-code-background: rgba(158, 167, 179, 0.4);
     --h-color-theme: var(--color-white);
     --h1-color-theme: var(--color-white);
@@ -970,6 +969,8 @@ body {
     --shadow-l: none;
 
     /* Code and Headers */
+    --code-comment: #59636e;
+    /* prettylights-syntax-comment */
     --inline-code-background: rgba(175, 184, 193, 0.2);
     --h-color-theme: var(--color-base-100);
     --h1-color-theme: var(--color-base-100);
