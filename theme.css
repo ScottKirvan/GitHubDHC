@@ -625,7 +625,7 @@ body {
     --toggle-border-width: 2px;
     --toggle-width: 40px;
     --toggle-radius: 18px;
-    --toggle-thumb-color: white;
+    --toggle-thumb-color: #ffffff;
     --toggle-thumb-radius: 18px;
     --toggle-thumb-height: 18px;
     --toggle-thumb-width: 18px;
@@ -668,7 +668,7 @@ body {
     --text-normal: var(--color-base-100);
     --text-muted: var(--color-base-70);
     --text-faint: var(--color-base-50);
-    --text-on-accent: black;
+    --text-on-accent: #000000;
     --text-error: var(--color-red);
     --text-success: var(--color-green);
     --text-selection: hsla(var(--color-accent-hsl), 0.2);
@@ -1235,7 +1235,7 @@ input[type="submit"].mod-cta:hover {
 
 /* Keep the toggle thumb white */
 .checkbox-container::after {
-    background-color: white !important;
+    background-color: #ffffff !important;
 }
 
 /* Light theme - use darker blue for toggles */
