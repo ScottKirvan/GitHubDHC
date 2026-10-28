@@ -81,6 +81,21 @@ The audit can't judge text on images, accent colours a user picks, plugins outsi
 
 Add an entry to `scenes` in `scenes.mjs`. The comment above the list explains each field. If the scene needs a note, add it to `vault/`. Plugin settings go in `fixtures/plugins/<id>/data.json`.
 
+## Checking the review lint
+
+```bash
+npm run lint
+```
+
+Lints `theme.css` with the CSS rules Obsidian's community directory review applies: the Obsidian-specific rules from [`stylelint-config-obsidianmd`](https://www.npmjs.com/package/stylelint-config-obsidianmd), without the `stylelint-config-standard` formatting rules that config extends, which the review doesn't report. Errors, such as loading anything from an external URL, block publishing and fail the run. Warnings (`!important`, named colours, `:has()`, duplicate properties) lower the directory's score; they're listed, and shown as annotations on pull requests, but don't fail.
+
+An `!important` the theme has to keep carries a comment saying why, which also tells the linter it's deliberate:
+
+```css
+/* stylelint-disable-next-line declaration-no-important -- beats the inline style Obsidian sets on .foo */
+color: var(--text-normal) !important;
+```
+
 ## Testing the harness
 
 ```bash

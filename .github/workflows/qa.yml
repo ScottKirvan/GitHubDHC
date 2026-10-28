@@ -5,7 +5,10 @@ name: QA audit
 # with axe (npm run qa). Any violation fails the check. Reports, screenshots
 # and contact sheets are uploaded as the qa-report artifact.
 #
-# The unit job tests the harness itself (npm test).
+# The unit job tests the harness itself (npm test). The lint job runs the CSS
+# rules Obsidian's community directory review applies (npm run lint): errors,
+# which block publishing, fail it; warnings, which lower the directory score,
+# show as annotations and in the job summary.
 #
 # It runs on every pull request to main, including release-please's release
 # PR, so making it a required check blocks a release that fails the audit.
@@ -42,6 +45,22 @@ jobs:
           cache-dependency-path: qa/package-lock.json
       - run: npm ci
       - run: npm test
+
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: qa
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: qa/package-lock.json
+      - run: npm ci
+      - run: npm run lint
 
   audit:
     runs-on: ubuntu-latest

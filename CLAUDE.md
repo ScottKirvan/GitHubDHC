@@ -43,6 +43,7 @@ cd qa && npm install          # once
 npm run qa                    # full audit: every scene, desktop/phone/tablet, dark/light
 npm run qa -- --device desktop --mode dark --scene reading   # quick run
 npm run drift                 # newest Obsidian release vs. the baseline
+npm run lint                  # the CSS rules Obsidian's directory review applies
 npm test                      # unit tests for the harness (no Obsidian needed)
 cd docs && npm run docs:dev   # user guide locally
 ```

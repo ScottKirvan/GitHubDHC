@@ -9,10 +9,13 @@
 	"scripts": {
 		"qa": "node run.mjs",
 		"drift": "node drift.mjs",
+		"lint": "node lint.mjs",
 		"test": "node --test 'test/*.test.mjs'"
 	},
 	"devDependencies": {
 		"@electron/asar": "^4.3.1",
-		"axe-core": "^4.14.0"
+		"axe-core": "^4.14.0",
+		"stylelint": "^17.16.0",
+		"stylelint-config-obsidianmd": "^0.1.0"
 	}
 }
