@@ -45,6 +45,7 @@ It was close, but not really the way *my* GitHub looks (I use the GitHub Dark Hi
     - Form elements (dropdowns, inputs) now match GitHub styling
 - **GitHub-Style Callouts**
 - **Improved Typography**: Bold navigation items and better text hierarchy
+- **Contrast-Checked**: An automated audit checks every screen for WCAG AA text contrast in both themes, on desktop, phone and tablet, on every pull request (see [qa/README.md](qa/README.md))
 
 <details><summary><h2> Screenshots </h2></summary>
 <ul>
@@ -88,7 +89,7 @@ Current settings include:
 
 ## Feedback
 
-For any bugs or ideas for new features, please submit a [New Issue](https://github.com/ScottKirvan/GitHubDHC/issues) .  The best way to contribute directly is to make the changes yourself and submit them as a [New Pull Request](https://github.com/ScottKirvan/GitHubDHC/pulls).  Have a quesiton? Join the [Obsidian Members Group (OMG)](https://discord.gg/obsidianmd) Discord server - I'm @cptvideo - reach out and say, "hi!" 👋
+For any bugs or ideas for new features, please submit a [New Issue](https://github.com/ScottKirvan/GitHubDHC/issues) .  The best way to contribute directly is to make the changes yourself and submit them as a [New Pull Request](https://github.com/ScottKirvan/GitHubDHC/pulls).  If you change `theme.css`, the QA audit runs on your pull request automatically; see [CONTRIBUTING.md](CONTRIBUTING.md#testing) to run it yourself.  Have a quesiton? Join the [Obsidian Members Group (OMG)](https://discord.gg/obsidianmd) Discord server - I'm @cptvideo - reach out and say, "hi!" 👋
 
 ## Credits
 
@@ -97,6 +98,8 @@ A huge thank you and all creds due to  [@krios2146](https://github.com/krios2146
 Vladimir Kidyaev (2022-2023)  
 This code includes modifications by Scott Kirvan. Modifications (c) 2026 Scott Kirvan  
 Contributors:  [@saberzero1](https://github.com/saberzero1) (Obsidian [community reviewer](https://obsidian.md/help/credits#Community+review))
+
+The QA audit in [`qa/`](qa/README.md) is adapted from [Riccardo Bartoli's](https://github.com/rbartoli) QA harness for the [Tela theme](https://github.com/rbartoli/obsidian-tela-theme) (MIT, see [`qa/LICENSE-tela`](qa/LICENSE-tela)), described in the post [How I check every screen of my Obsidian theme](https://rblab.com/how-i-check-every-screen-of-my-obsidian-theme/). Thank you, Riccardo!  Contrast checking uses [axe-core](https://github.com/dequelabs/axe-core) by Deque Systems.
 
 Project Link:  <https://github.com/ScottKirvan/GitHubDHC>  
 If you're writing markdown, and not using *Obsidian*, check it out:  <https://obsidian.md/>  

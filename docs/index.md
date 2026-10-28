@@ -31,6 +31,12 @@ features:
   - icon: 🔧
     title: Style Settings
     details: Customizable via the Style Settings plugin — tweak colors and fonts to your preference.
+
+  - icon: ✅
+    title: Contrast Checked
+    details: An automated audit checks every screen for WCAG AA text contrast, in dark and light mode, on desktop, phone and tablet. Adapted from Riccardo Bartoli's QA harness for the Tela theme.
+    link: https://github.com/ScottKirvan/GitHubDHC/blob/main/qa/README.md
+    linkText: How it works
 ---
 
 <!-- Begin Sponsors -->
