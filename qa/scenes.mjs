@@ -53,6 +53,9 @@ export const scenes = [
 	// Obsidian 1.14's coloured highlights, in every colour and inside other blocks.
 	{ name: 'highlights-reading', scroll: READING, setup: (p) => p.run(() => __qa.open('Highlights.md', { mode: 'preview' })) },
 	{ name: 'highlights-editing', setup: (p) => p.run(() => __qa.edit('Highlights.md')) },
+	// Every heading level, one with a link in it, at the default settings.
+	{ name: 'headings-reading', scroll: READING, setup: (p) => p.run(() => __qa.open('Headings.md', { mode: 'preview' })) },
+	{ name: 'headings-editing', setup: (p) => p.run(() => __qa.edit('Headings.md')) },
 	// GitHub's alerts and Obsidian's callouts, every type, in both views.
 	{ name: 'callouts-reading', scroll: READING, setup: (p) => p.run(() => __qa.open('Callouts.md', { mode: 'preview' })) },
 	{ name: 'callouts-editing', scroll: EDITING, setup: (p) => p.run(() => __qa.edit('Callouts.md')) },
