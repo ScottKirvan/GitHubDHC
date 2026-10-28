@@ -1186,17 +1186,19 @@ input[type="submit"].mod-cta:hover {
 }
 
 /* Selected/active navigation item - blue left border */
-.vertical-tab-nav-item.is-active {
-    border-left-color: var(--text-accent) !important;
-    background-color: var(--interactive-normal) !important;
+.vertical-tab-nav-item.is-active,
+body:not(.is-phone) .vertical-tab-nav-item.is-active {
+    border-left-color: var(--text-accent);
+    background-color: var(--interactive-normal);
     /* Darker background - same as buttons */
-    color: var(--text-normal) !important;
+    color: var(--text-normal);
     /* Keep text white */
 }
 
 /* Hover state for navigation items - lighter background */
-.vertical-tab-nav-item:hover {
-    background-color: var(--interactive-hover) !important;
+.vertical-tab-nav-item:hover,
+body:not(.is-phone) .vertical-tab-nav-item:hover {
+    background-color: var(--interactive-hover);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1224,23 +1226,23 @@ input[type="submit"].mod-cta:hover {
 
 /* Toggle switch off state - grey background */
 .checkbox-container {
-    background-color: var(--interactive-normal) !important;
+    background-color: var(--interactive-normal);
 }
 
 /* Toggle switch on state - blue background */
 .checkbox-container.is-enabled {
-    background-color: #71b7ff !important;
+    background-color: #71b7ff;
     /* GitHub DHC blue - direct color */
 }
 
 /* Keep the toggle thumb white */
 .checkbox-container::after {
-    background-color: #ffffff !important;
+    background-color: #ffffff;
 }
 
 /* Light theme - use darker blue for toggles */
 .theme-light .checkbox-container.is-enabled {
-    background-color: #0969da !important;
+    background-color: #0969da;
     /* GitHub Light blue */
 }
 
@@ -1254,7 +1256,7 @@ input[type="submit"].mod-cta:hover {
     /* No grey border */
     border-left: 4px solid var(--callout-color);
     /* Thick colored left border */
-    background-color: var(--background-primary) !important;
+    background-color: var(--background-primary);
     padding: 11px 16px;
     /* Reduced from 16px to ~11px vertically (30% reduction) */
     margin: 11px 0;
@@ -1265,7 +1267,7 @@ input[type="submit"].mod-cta:hover {
 
 /* Title and icon use the callout color */
 .callout-title {
-    color: var(--callout-color) !important;
+    color: var(--callout-color);
     font-weight: var(--font-semibold);
     display: flex;
     align-items: center;
@@ -1275,12 +1277,12 @@ input[type="submit"].mod-cta:hover {
 }
 
 .callout-icon {
-    color: var(--callout-color) !important;
+    color: var(--callout-color);
 }
 
 /* Content text stays white */
 .callout-content {
-    color: var(--text-normal) !important;
+    color: var(--text-normal);
 }
 
 /* Specific callout types with BRIGHT GitHub colors */
@@ -1353,7 +1355,7 @@ input[type="submit"].mod-cta:hover {
 /* Legacy support for callout-on setting */
 body.callout-on .callout {
     border-left: 4px solid var(--callout-color);
-    background-color: var(--background-primary) !important;
+    background-color: var(--background-primary);
 }
 
 body.callout-on .callout-content p {
@@ -1792,9 +1794,9 @@ h6,
 /* Full-width borders for H1/H2 in editing mode */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 {
-    display: block !important;
-    padding-bottom: .3em !important;
-    border-bottom: 1px solid var(--color-base-50) !important;
+    display: block;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--color-base-50);
 }
 
 /* Keep images inline with headings in editing mode */
@@ -1805,7 +1807,7 @@ h6,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-4,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-5,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-6 {
-    white-space: normal !important;
+    white-space: normal;
 }
 
 /* Target all child elements in headers - spans, images, formatting, etc. */
@@ -1816,8 +1818,8 @@ h6,
 .markdown-source-view.mod-cm6 .HyperMD-header-4>*,
 .markdown-source-view.mod-cm6 .HyperMD-header-5>*,
 .markdown-source-view.mod-cm6 .HyperMD-header-6>* {
-    display: inline !important;
-    vertical-align: middle !important;
+    display: inline;
+    vertical-align: middle;
 }
 
 /* Specifically target widget buffers in headers */
@@ -1828,11 +1830,11 @@ h6,
 .markdown-source-view.mod-cm6 .HyperMD-header-4 img.cm-widgetBuffer,
 .markdown-source-view.mod-cm6 .HyperMD-header-5 img.cm-widgetBuffer,
 .markdown-source-view.mod-cm6 .HyperMD-header-6 img.cm-widgetBuffer {
-    display: inline !important;
-    width: 0 !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    display: inline;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* Target the actual images within headers */
@@ -1843,10 +1845,10 @@ h6,
 .markdown-source-view.mod-cm6 .HyperMD-header-4 img:not(.cm-widgetBuffer),
 .markdown-source-view.mod-cm6 .HyperMD-header-5 img:not(.cm-widgetBuffer),
 .markdown-source-view.mod-cm6 .HyperMD-header-6 img:not(.cm-widgetBuffer) {
-    display: inline !important;
-    vertical-align: middle !important;
-    max-height: 1.2em !important;
-    margin: 4px 2px 4px 8px !important;
+    display: inline;
+    vertical-align: middle;
+    max-height: 1.2em;
+    margin: 4px 2px 4px 8px;
 }
 
 .inline-title {
@@ -1854,9 +1856,9 @@ h6,
     padding-bottom: .3em;
     border-bottom: 1px solid var(--color-base-50);
     margin-top: 0;
-    margin-bottom: 16px !important;
-    margin-right: 0 !important;
-    min-width: 0 !important;
+    margin-bottom: 16px;
+    margin-right: 0;
+    min-width: 0;
     color: var(--text-normal);
     font-weight: 600;
     line-height: 1.125;
@@ -1907,6 +1909,7 @@ background-color: var(--color-orange);
 /* All links underlined in reading mode */
 .markdown-rendered a,
 .markdown-preview-view a {
+    /* stylelint-disable-next-line declaration-no-important -- underline every link in reading view, whatever kind it is; Obsidian decorates internal, external, unresolved and footnote links with separate, more specific rules */
     text-decoration: underline !important;
 }
 
@@ -1916,6 +1919,7 @@ background-color: var(--color-orange);
 .markdown-source-view.mod-cm6 .cm-url,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link,
 .markdown-source-view.mod-cm6 a {
+    /* stylelint-disable-next-line declaration-no-important -- underline every link in live preview, whatever kind it is; Obsidian decorates internal, external, unresolved and footnote links with separate, more specific rules */
     text-decoration: underline !important;
 }
 
@@ -1964,8 +1968,10 @@ DOCUMENT CONTAINER - Full-width with side margins and border
 
 /* Scoped to markdown note views — canvas nodes manage their own width */
 .workspace-leaf-content[data-type="markdown"] .cm-content,
-.workspace-leaf-content[data-type="markdown"] .cm-line {
-    max-width: 100% !important;
+.workspace-leaf-content[data-type="markdown"] .cm-line,
+.workspace-leaf-content[data-type="markdown"] .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
+.workspace-leaf-content[data-type="markdown"] .markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
+    max-width: 100%;
     width: 100%;
 }
 
