@@ -1255,33 +1255,70 @@ input[type="submit"].mod-cta:hover {
 }
 
 /* Specific callout types with BRIGHT GitHub colors */
-.callout[data-callout="note"],
-.callout[data-callout="info"] {
+.theme-dark .callout[data-callout="note"],
+.theme-dark .callout[data-callout="info"] {
     --callout-color: #71b7ff;
     /* Bright blue */
 }
 
-.callout[data-callout="tip"],
-.callout[data-callout="success"] {
+.theme-dark .callout[data-callout="tip"],
+.theme-dark .callout[data-callout="success"] {
     --callout-color: #2bd853;
     /* Bright green */
 }
 
-.callout[data-callout="important"] {
+.theme-dark .callout[data-callout="important"] {
     --callout-color: #d2a8ff;
     /* Bright purple */
 }
 
-.callout[data-callout="warning"] {
+.theme-dark .callout[data-callout="warning"] {
     --callout-color: #f0b72f;
     /* Bright orange/yellow */
 }
 
-.callout[data-callout="caution"],
-.callout[data-callout="danger"],
-.callout[data-callout="error"] {
+.theme-dark .callout[data-callout="caution"],
+.theme-dark .callout[data-callout="danger"],
+.theme-dark .callout[data-callout="error"] {
     --callout-color: #ff9492;
     /* Bright red */
+}
+
+/* GitHub Light Default alert colors */
+.theme-light .callout[data-callout="note"],
+.theme-light .callout[data-callout="info"] {
+    --callout-color: #0969da;
+    /* fgColor-accent */
+}
+
+.theme-light .callout[data-callout="tip"],
+.theme-light .callout[data-callout="success"] {
+    --callout-color: #1a7f37;
+    /* fgColor-success */
+}
+
+.theme-light .callout[data-callout="important"] {
+    --callout-color: #8250df;
+    /* fgColor-done */
+}
+
+.theme-light .callout[data-callout="warning"] {
+    --callout-color: #9a6700;
+    /* fgColor-attention */
+}
+
+.theme-light .callout[data-callout="caution"],
+.theme-light .callout[data-callout="danger"],
+.theme-light .callout[data-callout="error"] {
+    --callout-color: #d1242f;
+    /* fgColor-danger */
+}
+
+/* GitHub has no quote alert; Obsidian's grey fails contrast on white */
+.theme-light .callout[data-callout="quote"],
+.theme-light .callout[data-callout="cite"] {
+    --callout-color: #59636e;
+    /* fgColor-muted */
 }
 
 /* Legacy support for callout-on setting */
