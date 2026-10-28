@@ -50,6 +50,15 @@ On Linux x64 the audit downloads Obsidian's AppImage into `~/.cache/githubdhc-qa
 runs it under `xvfb-run` when there is no display. Results go to `qa/out/` (gitignored).
 Exit codes: 0 pass, 1 contrast violations, 2 a scene failed to run.
 
+## Colour Decisions
+
+- GitHub's current Primer colours (`@primer/primitives`, the `dark-high-contrast` and
+  `light` themes) are the reference for every colour in the theme. Don't stray from
+  them without the user's permission.
+- The contrast target is WCAG AA (4.5:1 for normal text, 3:1 for large text) in both
+  modes. That's what `npm run qa` enforces. AAA was rejected: GitHub's own Dark High
+  Contrast doesn't meet it (its code comments are 5.94:1).
+
 ## Releases
 
 Release Please owns versioning. Merging its release PR on `main` creates the tag and
