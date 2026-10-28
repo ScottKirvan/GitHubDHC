@@ -1192,6 +1192,25 @@ input[type="submit"].mod-cta:hover {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   SIDEBAR TREES - file-type badges and result counts
+
+   Obsidian draws these in --text-faint, which falls below 4.5:1 on selected
+   rows. GitHub's weakest text colour is fgColor-muted.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.theme-dark .nav-file-tag,
+.theme-dark .tree-item-flair {
+    color: var(--color-base-70);
+    /* fgColor-muted #b7bdc8 */
+}
+
+.theme-light .nav-file-tag,
+.theme-light .tree-item-flair {
+    color: var(--color-base-60);
+    /* fgColor-muted #59636e */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    TOGGLE SWITCHES - On/Off states
    ───────────────────────────────────────────────────────────────────────── */
 
