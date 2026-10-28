@@ -1233,20 +1233,13 @@ input[type="submit"].mod-cta:hover {
     /* GitHub DHC blue - direct color */
 }
 
-/* Alternative approach using the input checked state */
-.checkbox-container:has(input[type="checkbox"]:checked) {
-    background-color: #71b7ff !important;
-    /* GitHub DHC blue - direct color */
-}
-
 /* Keep the toggle thumb white */
 .checkbox-container::after {
     background-color: white !important;
 }
 
 /* Light theme - use darker blue for toggles */
-.theme-light .checkbox-container.is-enabled,
-.theme-light .checkbox-container:has(input[type="checkbox"]:checked) {
+.theme-light .checkbox-container.is-enabled {
     background-color: #0969da !important;
     /* GitHub Light blue */
 }
@@ -1886,7 +1879,6 @@ h6,
 
 table tbody tr {
     background-color: var(--background-primary);
-    background-color: var(--color-orange);
 }
 
 /*
