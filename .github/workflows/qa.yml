@@ -34,8 +34,8 @@ jobs:
         working-directory: qa
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22.x
           cache: npm
@@ -51,8 +51,8 @@ jobs:
         working-directory: qa
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22.x
           cache: npm
@@ -61,7 +61,7 @@ jobs:
       - name: Install a virtual display and ImageMagick
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb imagemagick
       - name: Cache Obsidian and the community plugins
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/githubdhc-qa
           key: githubdhc-qa-${{ runner.os }}-${{ inputs.obsidian || 'latest' }}-${{ github.run_id }}
@@ -73,7 +73,7 @@ jobs:
       - name: Summary
         if: always()
         run: if [ -f out/report/report.md ]; then cat out/report/report.md >> "$GITHUB_STEP_SUMMARY"; fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: qa-report
