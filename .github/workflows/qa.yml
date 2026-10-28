@@ -5,6 +5,8 @@ name: QA audit
 # with axe (npm run qa). Any violation fails the check. Reports, screenshots
 # and contact sheets are uploaded as the qa-report artifact.
 #
+# The unit job tests the harness itself (npm test).
+#
 # It runs on every pull request to main, including release-please's release
 # PR, so making it a required check blocks a release that fails the audit.
 
@@ -25,6 +27,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  unit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: qa
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: qa/package-lock.json
+      - run: npm ci
+      - run: npm test
+
   audit:
     runs-on: ubuntu-latest
     timeout-minutes: 60
