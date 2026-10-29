@@ -1906,21 +1906,39 @@ background-color: var(--color-orange);
    LINKS - All links underlined, headings included
    ───────────────────────────────────────────────────────────────────────── */
 
-/* All links underlined in reading mode */
-.markdown-rendered a,
-.markdown-preview-view a {
-    /* stylelint-disable-next-line declaration-no-important -- underline every link in reading view, whatever kind it is; Obsidian decorates internal, external, unresolved and footnote links with separate, more specific rules */
-    text-decoration: underline !important;
+/* Obsidian underlines links through these variables, which the theme sets to
+   none for its own interface; notes switch them back on */
+.markdown-rendered,
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 {
+    --link-decoration: underline;
+    --link-external-decoration: underline;
+    --link-unresolved-decoration-color: currentColor;
+    --tag-decoration-hover: underline;
 }
 
-/* All links underlined in editing mode */
+.metadata-container {
+    --link-decoration: none;
+}
+
+.markdown-rendered a,
+.markdown-preview-view a,
 .markdown-source-view.mod-cm6 .cm-link,
 .markdown-source-view.mod-cm6 .cm-underline,
 .markdown-source-view.mod-cm6 .cm-url,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link,
 .markdown-source-view.mod-cm6 a {
-    /* stylelint-disable-next-line declaration-no-important -- underline every link in live preview, whatever kind it is; Obsidian decorates internal, external, unresolved and footnote links with separate, more specific rules */
-    text-decoration: underline !important;
+    text-decoration: underline;
+}
+
+/* Obsidian's own rules for these set the decoration outright, not through a
+   variable; each selector here matches theirs in specificity and wins by
+   loading later */
+.markdown-rendered .internal-link.is-unresolved:hover,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-footnote span.cm-hmd-footnote:hover,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-footnote span.cm-hmd-footnote .cm-underline,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-footnote span.cm-hmd-footnote .cm-underline:hover {
+    text-decoration: underline;
 }
 
 /* Images - ensure proper spacing and display */

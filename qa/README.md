@@ -89,12 +89,7 @@ npm run lint
 
 Lints `theme.css` with the CSS rules Obsidian's community directory review applies: the Obsidian-specific rules from [`stylelint-config-obsidianmd`](https://www.npmjs.com/package/stylelint-config-obsidianmd), without the `stylelint-config-standard` formatting rules that config extends, which the review doesn't report. Errors, such as loading anything from an external URL, block publishing and fail the run. Warnings (`!important`, named colours, `:has()`, duplicate properties) lower the directory's score; they're listed, and shown as annotations on pull requests, but don't fail.
 
-An `!important` the theme has to keep carries a comment saying why, which also tells the linter it's deliberate:
-
-```css
-/* stylelint-disable-next-line declaration-no-important -- beats the inline style Obsidian sets on .foo */
-color: var(--text-normal) !important;
-```
+Disable comments (`stylelint-disable`) don't hide a finding: the directory review ignores them, so the lint ignores them too, and what it reports is what the directory will report. Override Obsidian through its CSS variables, or with a selector at least as specific as Obsidian's (the theme loads after Obsidian's own CSS, so it wins a tie), rather than with `!important`.
 
 ## Testing the harness
 

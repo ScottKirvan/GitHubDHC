@@ -3,7 +3,8 @@
 // Lints theme.css with the rules Obsidian's community directory review
 // applies: the Obsidian-specific rules in stylelint-config-obsidianmd, without
 // the stylelint-config-standard formatting rules that config extends, which
-// the review doesn't report. Errors block publishing and fail the run (exit
+// the review doesn't report. Disable comments are ignored, as the review
+// ignores them. Errors block publishing and fail the run (exit
 // 1); warnings lower the directory score, so they're listed but don't fail.
 //
 // In GitHub Actions each finding is also an annotation on the PR, and the
@@ -15,10 +16,9 @@ import obsidian from 'stylelint-config-obsidianmd'
 
 const root = resolve(import.meta.dirname, '..')
 
-export const reviewConfig = { plugins: obsidian.plugins, rules: obsidian.rules }
+export const reviewConfig = { plugins: obsidian.plugins, rules: obsidian.rules, ignoreDisables: true }
 
-// Findings in reading order, the theme's own disable comments already applied
-// by stylelint, split by what they mean for publishing.
+// Findings in reading order, split by what they mean for publishing.
 export function summarise(results, base = root) {
 	const findings = results
 		.flatMap((r) => r.warnings.map((w) => ({ file: relative(base, r.source), line: w.line, column: w.column, rule: w.rule, severity: w.severity, text: w.text.replace(/\s*\([\w/-]+\)$/, '') })))
