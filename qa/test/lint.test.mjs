@@ -23,12 +23,12 @@ test("stylelint-config-standard's formatting rules are left out, as the review l
 	assert.deepEqual([...errors, ...warnings], [])
 })
 
-test('a disable comment with a reason keeps an !important out of the findings', async () => {
+test('a disable comment still counts, since the directory review ignores them', async () => {
 	const { warnings } = await lint(`a {
     /* stylelint-disable-next-line declaration-no-important -- beats an inline style */
     color: #000 !important;
 }`)
-	assert.deepEqual(warnings, [])
+	assert.deepEqual(warnings.map((w) => w.rule), ['declaration-no-important'])
 })
 
 test('findings become GitHub annotations and a summary', () => {

@@ -110,7 +110,7 @@ npm run qa
 
 It opens a demo vault in a throwaway copy of Obsidian (your own vaults are never touched), renders about 40 scenes in dark and light mode on desktop, phone and tablet, and checks every screen's text contrast with [axe](https://github.com/dequelabs/axe-core). Any violation fails the run. The report and screenshots go to `qa/out/`. Use `npm run qa -- --device desktop --mode dark --scene reading` for a quick run.
 
-`npm run lint` (also in `qa/`) checks `theme.css` against the CSS rules Obsidian's community directory review applies. It runs on every pull request too: errors would block publishing, so they fail the check, and warnings lower the theme's directory score, so they're shown on the pull request. Avoid adding `!important`; when one is genuinely needed, add a `stylelint-disable-next-line declaration-no-important -- <reason>` comment above it explaining why.
+`npm run lint` (also in `qa/`) checks `theme.css` against the CSS rules Obsidian's community directory review applies. It runs on every pull request too: errors would block publishing, so they fail the check, and warnings lower the theme's directory score, so they're shown on the pull request. Avoid `!important`: override Obsidian through its CSS variables, or with a selector at least as specific as Obsidian's. Disable comments don't help, since the directory review ignores them, and so does `npm run lint`.
 
 If you add or change an option in the `@settings` block of `theme.css`, update the matching lists in `qa/scenes.mjs`. [`qa/README.md`](qa/README.md) has the requirements, all the options, and how to add a scene.
 
