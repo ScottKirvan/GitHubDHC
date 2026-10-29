@@ -2,7 +2,7 @@
 <div align="center">
   <img src="https://github.com/ScottKirvan/GitHubDHC/blob/main/imgs/promo.png?raw=true" alt="promo" height="auto" />
   <h1><a href="https://github.com/ScottKirvan/GitHubDHC">GitHubDHC</a></h1>
-  <h3>A GitHub Dark High Contrast theme for Obsidian!</h3> 
+  <h3>Style your Obsidian vault with GitHub’s Dark High Contrast and Light Default themes, built on Primer colors with WCAG 2.2 AA text contrast and colorblind palettes.</h3> 
   
 <!-- Badges -->
 <p>
