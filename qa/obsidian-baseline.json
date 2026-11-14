@@ -1,11 +1,12 @@
 {
-	"obsidian": "1.14.5",
+	"obsidian": "1.15.1",
 	"uses": {
 		"sets": [
 			"--accent-h",
 			"--accent-l",
 			"--accent-s",
 			"--anim-duration-fast",
+			"--anim-duration-slow",
 			"--anim-duration-superfast",
 			"--anim-motion-swing",
 			"--background-modifier-active-hover",
@@ -322,6 +323,7 @@
 			"--scrollbar-active-thumb-bg",
 			"--scrollbar-bg",
 			"--scrollbar-thumb-bg",
+			"--scrollbar-width",
 			"--search-clear-button-color",
 			"--search-clear-button-size",
 			"--search-icon-color",
@@ -455,6 +457,7 @@
 			"--font-text-size"
 		],
 		"selectors": [
+			".HyperMD-footnote",
 			".HyperMD-header",
 			".HyperMD-header-1",
 			".HyperMD-header-2",
@@ -479,24 +482,31 @@
 			".cm-header-4",
 			".cm-header-5",
 			".cm-header-6",
+			".cm-hmd-footnote",
 			".cm-hmd-internal-link",
 			".cm-line",
 			".cm-link",
+			".cm-scroller",
 			".cm-sizer",
 			".cm-underline",
 			".cm-url",
 			".cm-widgetBuffer",
 			".dropdown",
 			".inline-title",
+			".internal-link",
 			".is-active",
 			".is-enabled",
 			".is-focused",
 			".is-mobile",
+			".is-phone",
+			".is-readable-line-width",
 			".is-selected",
+			".is-unresolved",
 			".markdown-preview-sizer",
 			".markdown-preview-view",
 			".markdown-rendered",
 			".markdown-source-view",
+			".metadata-container",
 			".mod-canvas-color-1",
 			".mod-canvas-color-2",
 			".mod-canvas-color-3",
@@ -505,8 +515,11 @@
 			".mod-canvas-color-6",
 			".mod-cm6",
 			".mod-cta",
+			".nav-file-tag",
+			".notice",
 			".theme-dark",
 			".theme-light",
+			".tree-item-flair",
 			".vertical-tab-nav-item",
 			".workspace-leaf-content",
 			"[data-callout]",
@@ -520,7 +533,6 @@
 		"--accent-s-theme",
 		"--anim-duration-moderate",
 		"--anim-duration-none",
-		"--anim-duration-slow",
 		"--anim-motion-delay",
 		"--anim-motion-jumpy",
 		"--anim-motion-smooth",
@@ -548,6 +560,11 @@
 		"--lane-width",
 		"--mono-rgb-0",
 		"--nav-collapse-icon-color-collapsed",
+		"--nn-theme-file-date-color",
+		"--nn-theme-file-parent-color",
+		"--nn-theme-file-property-color",
+		"--nn-theme-file-tag-color",
+		"--nn-theme-file-word-count-color",
 		"--rgb-hover",
 		"--settings-home-background",
 		"--slider-s-thumb-position",
@@ -600,13 +617,16 @@
 			"body": "88%"
 		},
 		"--anim-duration-fast": {
-			"body": "140ms"
+			"body": ".14s"
+		},
+		"--anim-duration-slow": {
+			"body": ".56s"
 		},
 		"--anim-duration-superfast": {
 			"body": "70ms"
 		},
 		"--anim-motion-swing": {
-			"body": "cubic-bezier(0, 0.55, 0.45, 1)"
+			"body": "cubic-bezier(0, .55, .45, 1)"
 		},
 		"--background-modifier-active-hover": {
 			"body": "color-mix(in oklch, var(--interactive-accent) 10%, transparent)"
@@ -616,20 +636,20 @@
 			"body": "var(--color-base-30)"
 		},
 		"--background-modifier-border-focus": {
-			".pdf-findbar .mod-not-found": "rgba(var(--background-modifier-error-rgb), 0.6)",
+			".pdf-findbar .mod-not-found": "rgba(var(--background-modifier-error-rgb), .6)",
 			"body": "var(--color-base-40)"
 		},
 		"--background-modifier-border-hover": {
 			"body": "var(--color-base-35)"
 		},
 		"--background-modifier-box-shadow": {
-			".theme-dark": "rgba(0, 0, 0, 0.3)",
-			".theme-light": "rgba(0, 0, 0, 0.1)"
+			".theme-dark": "rgba(0, 0, 0, .3)",
+			".theme-light": "rgba(0, 0, 0, .1)"
 		},
 		"--background-modifier-cover": {
-			".is-mobile": "rgba(0, 0, 0, 0.15)",
-			".theme-dark": "rgba(10, 10, 10, 0.4)",
-			".theme-light": "rgba(220, 220, 220, 0.4)"
+			".is-mobile": "rgba(0, 0, 0, .15)",
+			".theme-dark": "rgba(10, 10, 10, .4)",
+			".theme-light": "rgba(220, 220, 220, .4)"
 		},
 		"--background-modifier-error": {
 			"body": "var(--color-red)"
@@ -646,7 +666,7 @@
 			".is-mobile .menu": "var(--interactive-normal)",
 			".is-phone .search-input-container.mod-raised": "var(--background-primary)",
 			".metadata-property-value .multi-select-container": "transparent",
-			".pdf-findbar .mod-not-found": "rgba(var(--background-modifier-error-rgb), 0.1)",
+			".pdf-findbar .mod-not-found": "rgba(var(--background-modifier-error-rgb), .1)",
 			".theme-dark": "var(--color-base-25)",
 			".theme-dark.is-phone .search-input-container.mod-raised": "transparent",
 			".workspace-drawer .search-input-container": "transparent",
@@ -697,7 +717,7 @@
 			"body": "calc(var(--font-weight) + var(--bold-modifier))"
 		},
 		"--border-width": {
-			"@media (min-resolution: 2dppx), (min-resolution: 192dpi) » .is-phone": "0.5px",
+			"@media(min-resolution:2dppx),(min-resolution:192dpi) » .is-phone": ".5px",
 			"body": "1px"
 		},
 		"--button-radius": {
@@ -708,32 +728,32 @@
 			"body": "var(--highlight-mix-blend-mode)"
 		},
 		"--callout-border-opacity": {
-			"body": "0.25"
+			"body": ".25"
 		},
 		"--callout-border-width": {
 			"body": "0px"
 		},
 		"--callout-color": {
 			".callout": "var(--callout-default)",
-			".callout[data-callout=\"abstract\"], .callout[data-callout=\"summary\"], .callout[data-callout=\"tldr\"]": "var(--callout-summary)",
-			".callout[data-callout=\"bug\"]": "var(--callout-bug)",
-			".callout[data-callout=\"danger\"], .callout[data-callout=\"error\"]": "var(--callout-error)",
-			".callout[data-callout=\"example\"]": "var(--callout-example)",
-			".callout[data-callout=\"failure\"], .callout[data-callout=\"fail\"], .callout[data-callout=\"missing\"]": "var(--callout-fail)",
-			".callout[data-callout=\"important\"]": "var(--callout-important)",
-			".callout[data-callout=\"info\"]": "var(--callout-info)",
-			".callout[data-callout=\"question\"], .callout[data-callout=\"help\"], .callout[data-callout=\"faq\"]": "var(--callout-question)",
-			".callout[data-callout=\"quote\"], .callout[data-callout=\"cite\"]": "var(--callout-quote)",
-			".callout[data-callout=\"success\"], .callout[data-callout=\"check\"], .callout[data-callout=\"done\"]": "var(--callout-success)",
-			".callout[data-callout=\"tip\"], .callout[data-callout=\"hint\"]": "var(--callout-tip)",
-			".callout[data-callout=\"todo\"]": "var(--callout-todo)",
-			".callout[data-callout=\"warning\"], .callout[data-callout=\"caution\"], .callout[data-callout=\"attention\"]": "var(--callout-warning)"
+			".callout[data-callout=abstract],.callout[data-callout=summary],.callout[data-callout=tldr]": "var(--callout-summary)",
+			".callout[data-callout=bug]": "var(--callout-bug)",
+			".callout[data-callout=danger],.callout[data-callout=error]": "var(--callout-error)",
+			".callout[data-callout=example]": "var(--callout-example)",
+			".callout[data-callout=failure],.callout[data-callout=fail],.callout[data-callout=missing]": "var(--callout-fail)",
+			".callout[data-callout=important]": "var(--callout-important)",
+			".callout[data-callout=info]": "var(--callout-info)",
+			".callout[data-callout=question],.callout[data-callout=help],.callout[data-callout=faq]": "var(--callout-question)",
+			".callout[data-callout=quote],.callout[data-callout=cite]": "var(--callout-quote)",
+			".callout[data-callout=success],.callout[data-callout=check],.callout[data-callout=done]": "var(--callout-success)",
+			".callout[data-callout=tip],.callout[data-callout=hint]": "var(--callout-tip)",
+			".callout[data-callout=todo]": "var(--callout-todo)",
+			".callout[data-callout=warning],.callout[data-callout=caution],.callout[data-callout=attention]": "var(--callout-warning)"
 		},
 		"--callout-content-padding": {
 			"body": "0"
 		},
 		"--callout-padding": {
-			".mod-rtl, .is-rtl, .rtl": "var(--size-4-3) var(--size-4-6) var(--size-4-3) var(--size-4-3)",
+			".mod-rtl,.is-rtl,.rtl": "var(--size-4-3) var(--size-4-6) var(--size-4-3) var(--size-4-3)",
 			"body": "var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6)"
 		},
 		"--callout-radius": {
@@ -970,21 +990,21 @@
 		},
 		"--dialog-max-height": {
 			".is-phone .modal-container": "calc(100vh - var(--safe-area-inset-top))",
-			".is-phone .modal-container.mod-confirmation .modal, .is-phone .modal.mod-lg, .is-phone .modal.mod-sidebar-layout": "calc(100vh - var(--safe-area-inset-top))",
+			".is-phone .modal-container.mod-confirmation .modal,.is-phone .modal.mod-lg,.is-phone .modal.mod-sidebar-layout": "calc(100vh - var(--safe-area-inset-top))",
 			"body": "85vh"
 		},
 		"--dialog-max-width": {
 			".is-phone .modal-container": "calc(100vw - var(--safe-area-inset-left) - var(--safe-area-inset-right) - var(--size-4-6))",
-			".is-phone .modal-container.mod-confirmation .modal, .is-phone .modal.mod-lg, .is-phone .modal.mod-sidebar-layout": "100vw",
+			".is-phone .modal-container.mod-confirmation .modal,.is-phone .modal.mod-lg,.is-phone .modal.mod-sidebar-layout": "100vw",
 			"body": "80vw"
 		},
 		"--dialog-width": {
 			".is-phone .modal-container": "100vw",
-			".is-phone .modal-container.mod-confirmation .modal, .is-phone .modal.mod-lg, .is-phone .modal.mod-sidebar-layout": "100vw",
+			".is-phone .modal-container.mod-confirmation .modal,.is-phone .modal.mod-lg,.is-phone .modal.mod-sidebar-layout": "100vw",
 			"body": "560px"
 		},
 		"--divider-color": {
-			".is-translucent:not(.is-fullscreen)": "rgba(0, 0, 0, 0.15)",
+			".is-translucent:not(.is-fullscreen)": "rgba(0, 0, 0, .15)",
 			"body": "var(--background-modifier-border)"
 		},
 		"--divider-color-hover": {
@@ -995,14 +1015,14 @@
 			"body": "calc(100% - var(--header-height))"
 		},
 		"--divider-width": {
-			"@media (min-resolution: 2dppx), (min-resolution: 192dpi) » .is-phone": "0.5px",
+			"@media(min-resolution:2dppx),(min-resolution:192dpi) » .is-phone": ".5px",
 			"body": "1px"
 		},
 		"--divider-width-hover": {
 			"body": "3px"
 		},
 		"--drag-ghost-background": {
-			"body": "rgba(0, 0, 0, 0.85)"
+			"body": "rgba(0, 0, 0, .85)"
 		},
 		"--drag-ghost-text-color": {
 			"body": "#fff"
@@ -1023,7 +1043,7 @@
 			"body": "inherit"
 		},
 		"--embed-padding": {
-			".mod-rtl, .is-rtl, .rtl": "0 var(--size-4-6) 0 0",
+			".mod-rtl,.is-rtl,.rtl": "0 var(--size-4-6) 0 0",
 			"body": "0 0 0 var(--size-4-6)"
 		},
 		"--file-folding-offset": {
@@ -1047,21 +1067,22 @@
 			"body": "700px"
 		},
 		"--file-margins": {
-			".mod-secondary-split .markdown-preview-view, .mod-primary-split .markdown-preview-view, .mod-secondary-split .markdown-source-view.mod-cm6 .cm-scroller, .mod-primary-split .markdown-source-view.mod-cm6 .cm-scroller": "var(--size-4-5)",
-			".popover.hover-popover > .markdown-embed[data-type=\"footnote\"] > .markdown-embed-content .cm-scroller, .popover.hover-popover > .markdown-embed[data-type=\"footnote\"] > .markdown-embed-content .markdown-preview-view": "var(--size-4-3) var(--size-4-4)",
+			".mod-secondary-split .markdown-preview-view,.mod-primary-split .markdown-preview-view,.mod-secondary-split .markdown-source-view.mod-cm6 .cm-scroller,.mod-primary-split .markdown-source-view.mod-cm6 .cm-scroller": "var(--size-4-5)",
+			".popover.hover-popover>.markdown-embed[data-type=footnote]>.markdown-embed-content .cm-scroller,.popover.hover-popover>.markdown-embed[data-type=footnote]>.markdown-embed-content .markdown-preview-view": "var(--size-4-3) var(--size-4-4)",
+			"@media print » body.is-mobile>.print": "var(--size-4-8)",
 			"body": "var(--file-margins-y) var(--file-margins-x)"
 		},
 		"--font-bold": {
 			"body": "700"
 		},
 		"--font-interface-theme": {
-			"body": "'??'"
+			"body": "\"??\""
 		},
 		"--font-medium": {
 			"body": "500"
 		},
 		"--font-monospace-theme": {
-			"body": "'??'"
+			"body": "\"??\""
 		},
 		"--font-normal": {
 			"body": "400"
@@ -1070,19 +1091,19 @@
 			"body": "600"
 		},
 		"--font-small": {
-			"body": "0.933em"
+			"body": ".933em"
 		},
 		"--font-smaller": {
-			"body": "0.875em"
+			"body": ".875em"
 		},
 		"--font-smallest": {
-			"body": "0.8em"
+			"body": ".8em"
 		},
 		"--font-text-size": {
 			"body": "16px"
 		},
 		"--font-text-theme": {
-			"body": "'??'"
+			"body": "\"??\""
 		},
 		"--font-ui-large": {
 			".is-mobile": "calc(var(--font-preferred-size) * 1.2)",
@@ -1093,11 +1114,11 @@
 			"body": "15px"
 		},
 		"--font-ui-small": {
-			".is-mobile": "calc(var(--font-preferred-size) * 0.937)",
+			".is-mobile": "calc(var(--font-preferred-size) * .937)",
 			"body": "13px"
 		},
 		"--font-ui-smaller": {
-			".is-mobile": "calc(var(--font-preferred-size) * 0.8)",
+			".is-mobile": "calc(var(--font-preferred-size) * .8)",
 			"body": "12px"
 		},
 		"--footnote-size": {
@@ -1274,13 +1295,12 @@
 			"body": "2px"
 		},
 		"--icon-color": {
-			".bases-query-container .filter-expression.mod-error .filer-expression-mode-toggle": "var(--text-error)",
 			".bases-toolbar-menu-item.is-disabled": "var(--text-faint)",
 			".bases-toolbar-menu-item.mod-active": "var(--text-normal)",
 			".bases-toolbar-menu-item.mod-hidden": "var(--text-faint)",
 			".community-item-downloads": "var(--text-faint)",
-			".horizontal-tab-nav-item.mobile-tap, .vertical-tab-nav-item.mobile-tap": "var(--text-normal)",
-			".is-mobile .modal-header-button, .is-mobile .modal-close-button, .is-mobile .modal-setting-back-button, .is-mobile .view-header-nav-buttons, .is-mobile .view-header .view-action": "var(--text-normal)",
+			".horizontal-tab-nav-item.mobile-tap,.vertical-tab-nav-item.mobile-tap": "var(--text-normal)",
+			".is-mobile .modal-header-button,.is-mobile .modal-close-button,.is-mobile .modal-setting-back-button,.is-mobile .view-header-nav-buttons,.is-mobile .view-header .view-action,.is-mobile .mobile-onboarding-action,.is-mobile .mobile-onboarding-back-button": "var(--text-normal)",
 			".is-mobile .prompt-input-cta": "var(--text-muted)",
 			".mobile-navbar-actions": "var(--text-normal)",
 			".mobile-tab-switcher-menubar": "var(--text-normal)",
@@ -1289,14 +1309,15 @@
 			".workspace-drawer .nav-buttons-container": "var(--text-muted)",
 			".workspace-drawer-tab-options": "var(--text-muted)",
 			".workspace-drawer-tab-options .workspace-tab-header.is-active": "var(--text-normal)",
-			".workspace-drawer-tab-options .workspace-tab-header.is-swiping .workspace-tab-header-inner, .workspace-drawer-tab-options .workspace-tab-header.mobile-tap .workspace-tab-header-inner": "var(--text-normal)",
+			".workspace-drawer-tab-options .workspace-tab-header.is-swiping .workspace-tab-header-inner,.workspace-drawer-tab-options .workspace-tab-header.mobile-tap .workspace-tab-header-inner": "var(--text-normal)",
 			".workspace-drawer-tab-options.is-collapsed .workspace-drawer-tab-select": "var(--text-normal)",
 			".workspace-drawer-tab-select": "var(--text-faint)",
+			":where(.bases-query-container,.drag-reorder-ghost) .filter-statement.mod-error .filer-expression-mode-toggle": "var(--text-error)",
 			"body": "var(--text-muted)",
 			"body.is-tablet .sidebar-toggle-button": "var(--text-normal)"
 		},
 		"--icon-color-active": {
-			".is-mobile .modal-header-button, .is-mobile .modal-close-button, .is-mobile .modal-setting-back-button, .is-mobile .view-header-nav-buttons, .is-mobile .view-header .view-action": "var(--text-normal)",
+			".is-mobile .modal-header-button,.is-mobile .modal-close-button,.is-mobile .modal-setting-back-button,.is-mobile .view-header-nav-buttons,.is-mobile .view-header .view-action,.is-mobile .mobile-onboarding-action,.is-mobile .mobile-onboarding-back-button": "var(--text-normal)",
 			".mobile-navbar-actions": "var(--text-normal)",
 			".mobile-tab-switcher-menubar": "var(--text-normal)",
 			".workspace-drawer .nav-buttons-container": "var(--text-normal)",
@@ -1308,7 +1329,7 @@
 		},
 		"--icon-color-hover": {
 			".bases-toolbar .bases-toolbar-item.bases-toolbar-views-menu .text-icon-button": "var(--text-normal)",
-			".is-mobile .modal-header-button, .is-mobile .modal-close-button, .is-mobile .modal-setting-back-button, .is-mobile .view-header-nav-buttons, .is-mobile .view-header .view-action": "var(--text-normal)",
+			".is-mobile .modal-header-button,.is-mobile .modal-close-button,.is-mobile .modal-setting-back-button,.is-mobile .view-header-nav-buttons,.is-mobile .view-header .view-action,.is-mobile .mobile-onboarding-action,.is-mobile .mobile-onboarding-back-button": "var(--text-normal)",
 			".mobile-navbar-actions": "var(--text-normal)",
 			".mobile-tab-switcher-menubar": "var(--text-normal)",
 			".text-icon-button.mod-destructive": "var(--text-error)",
@@ -1335,13 +1356,15 @@
 		},
 		"--icon-opacity": {
 			".is-mobile": "1",
-			"body": "0.85"
+			".menu.mod-sheet .bases-filter-page .filter-row .filter-group-header-actions,.drag-reorder-ghost.mod-sheet .filter-row .filter-group-header-actions": "1",
+			".menu.mod-sheet .bases-filter-page .filter-row .filter-row-actions,.drag-reorder-ghost.mod-sheet .filter-row .filter-row-actions": "1",
+			"body": ".85"
 		},
 		"--icon-opacity-active": {
 			"body": "1"
 		},
 		"--icon-opacity-hover": {
-			".is-mobile": "0.65",
+			".is-mobile": ".65",
 			".workspace-drawer .nav-buttons-container": "1",
 			"body": "1"
 		},
@@ -1353,11 +1376,9 @@
 			"body": "2px"
 		},
 		"--icon-size": {
-			".base-toolbar-sort-item, .base-toolbar-groupby-item": "var(--icon-s)",
+			".base-toolbar-sort-item,.base-toolbar-groupby-item": "var(--icon-s)",
 			".bases-formula-error .warning-icon": "var(--icon-xs)",
 			".bases-kanban-column-create": "var(--icon-s)",
-			".bases-query-container .filter-expression": "var(--icon-s)",
-			".bases-query-container .filter-group .filter-group-header-actions": "var(--icon-s)",
 			".bases-table-header-label": "var(--icon-xs)",
 			".bases-table-header-sort": "var(--icon-xs)",
 			".bases-table-summary-cell": "var(--icon-xs)",
@@ -1365,10 +1386,11 @@
 			".bases-toolbar-menu-form .input-row .formula-editor-status .status-icon": "var(--icon-xs)",
 			".bases-toolbar-menu-form .input-row .help-icon": "var(--icon-xs)",
 			".bases-toolbar-menu-item .bases-property-visibility-button": "var(--icon-s)",
+			".bases-toolbar-menu.mod-sheet .bases-toolbar-menu-header .clickable-icon": "var(--icon-l)",
 			".canvas-card-menu .canvas-card-menu-button": "var(--icon-xl)",
 			".canvas-control-item": "var(--canvas-controls-icon-size)",
 			".canvas-node-label": "1em",
-			".clickable-icon.side-dock-ribbon-action .svg-icon, .mod-primary-split .workspace-tab-header-inner-icon .svg-icon, .mod-secondary-split .workspace-tab-header-inner-icon .svg-icon": "var(--icon-m)",
+			".clickable-icon.side-dock-ribbon-action .svg-icon,.mod-primary-split .workspace-tab-header-inner-icon .svg-icon,.mod-secondary-split .workspace-tab-header-inner-icon .svg-icon": "var(--icon-m)",
 			".combobox-button .combobox-button-chevron": "var(--icon-xs)",
 			".combobox-button .combobox-button-icon": "var(--icon-s)",
 			".combobox-button .combobox-clear-button": "var(--icon-xs)",
@@ -1376,42 +1398,46 @@
 			".community-item-downloads": "var(--icon-xs)",
 			".community-modal-info-downloads": "var(--icon-xs)",
 			".community-plugins-feature-icon": "var(--icon-m)",
-			".drag-ghost-self > .svg-icon": "var(--icon-xs)",
+			".drag-ghost-self>.svg-icon": "var(--icon-xs)",
 			".file-tree .clickable-icon": "var(--icon-s)",
 			".file-tree-item-icon": "var(--icon-s)",
+			".grip-handle": "var(--icon-s)",
 			".help-options-container .setting-icon .svg-icon": "48px",
 			".is-mobile .bases-header": "var(--icon-l)",
-			".is-mobile .cm-content .image-embed .embed-action, .is-mobile .cm-image-reveal-tooltip .image-embed .embed-action": "var(--icon-l)",
+			".is-mobile .cm-content .image-embed .embed-action,.is-mobile .cm-image-reveal-tooltip .image-embed .embed-action": "var(--icon-l)",
 			".is-mobile .combobox-clear-button": "var(--icon-s)",
-			".is-mobile .modal-header-button, .is-mobile .modal-close-button, .is-mobile .modal-setting-back-button, .is-mobile .view-header-nav-buttons, .is-mobile .view-header .view-action": "var(--icon-l)",
+			".is-mobile .modal-header-button,.is-mobile .modal-close-button,.is-mobile .modal-setting-back-button,.is-mobile .view-header-nav-buttons,.is-mobile .view-header .view-action,.is-mobile .mobile-onboarding-action,.is-mobile .mobile-onboarding-back-button": "var(--icon-l)",
 			".is-mobile .prompt-input-cta": "var(--icon-l)",
-			".is-phone .bases-toolbar-menu .bases-toolbar-menu-header .clickable-icon": "var(--icon-l)",
 			".is-phone .bases-toolbar-menu-container-header": "var(--icon-l)",
-			".is-phone .modal.mod-settings .vertical-tab-header-group-items, .is-phone .modal.mod-settings .setting-search-result-group": "var(--icon-m)",
-			".is-phone .pdf-annotation-modal .popupContent:empty + .popupMeta, .is-phone .pdf-annotation-modal .popupMeta": "var(--font-ui-medium)",
+			".is-phone .modal.mod-settings .vertical-tab-header-group-items,.is-phone .modal.mod-settings .setting-search-result-group": "var(--icon-m)",
+			".is-phone .pdf-annotation-modal .popupContent:empty+.popupMeta,.is-phone .pdf-annotation-modal .popupMeta": "var(--font-ui-medium)",
 			".is-phone .slides-close-btn": "var(--icon-l)",
 			".is-phone .suggestion-item.mod-toggle": "var(--icon-l)",
 			".loader-spinner": "var(--icon-xl)",
-			".markdown-embed-link, .file-embed-link": "var(--icon-s)",
-			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn, .markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn": "var(--icon-s)",
-			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-drag-handle, .markdown-source-view.mod-cm6 .cm-table-widget .table-col-drag-handle": "var(--icon-s)",
+			".markdown-embed-link,.file-embed-link": "var(--icon-s)",
+			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn,.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn": "var(--icon-s)",
+			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-drag-handle,.markdown-source-view.mod-cm6 .cm-table-widget .table-col-drag-handle": "var(--icon-s)",
+			".menu.mod-sheet .bases-filter-page .bases-query-container .filter-group-actions .text-icon-button,.drag-reorder-ghost.mod-sheet .bases-query-container .filter-group-actions .text-icon-button": "var(--icon-xs)",
+			".menu.mod-sheet .bases-filter-page .conjunction-chevron,.drag-reorder-ghost.mod-sheet .conjunction-chevron": "var(--icon-xs)",
+			".menu.mod-sheet .bases-filter-page .filter-row .filter-group-header-actions,.drag-reorder-ghost.mod-sheet .filter-row .filter-group-header-actions": "calc(var(--icon-xs) * .8)",
+			".menu.mod-sheet .bases-filter-page .filter-row .filter-row-actions,.drag-reorder-ghost.mod-sheet .filter-row .filter-row-actions": "calc(var(--icon-xs) * .8)",
 			".metadata-link-flair": "var(--icon-xs)",
 			".metadata-property-value .clickable-icon": "var(--icon-xs)",
 			".metadata-property-warning-icon": "var(--icon-s)",
 			".mobile-navbar-action.has-longpress-menu .navbar-action-flair": "12px",
 			".mobile-navbar-actions": "26px",
-			".mobile-tab .mobile-tab-pin, .mobile-tab .close-button": "var(--icon-m)",
+			".mobile-tab .mobile-tab-pin,.mobile-tab .close-button": "var(--icon-m)",
 			".mobile-tab-preview-empty": "var(--icon-xl)",
 			".mobile-tab-switcher-menu-button-chevron": "var(--icon-s)",
 			".mobile-tab-switcher-menubar": "26px",
 			".mobile-toolbar-options-container": "var(--icon-l)",
-			".mod-root .mod-pinned, .mod-root .workspace-tab-header-inner-close-button": "var(--icon-s)",
-			".mod-root .workspace-tab-header-status-icon, .mod-root .workspace-tab-header-inner-icon": "var(--icon-xs)",
+			".mod-root .mod-pinned,.mod-root .workspace-tab-header-inner-close-button": "var(--icon-s)",
+			".mod-root .workspace-tab-header-status-icon,.mod-root .workspace-tab-header-inner-icon": "var(--icon-xs)",
 			".modal-status-icon": "72px",
 			".more-options-icon": "10px",
 			".multi-select-pill": "var(--icon-xs)",
 			".multi-select-pill-remove-button": "var(--icon-xs)",
-			".nav-file-icon .svg-icon, .suggestion-flair .svg-icon, .menu-item-icon .svg-icon, .status-bar-item .svg-icon": "var(--icon-s)",
+			".nav-file-icon .svg-icon,.suggestion-flair .svg-icon,.menu-item-icon .svg-icon,.status-bar-item .svg-icon": "var(--icon-s)",
 			".pdf-lock-icon .svg-icon": "var(--icon-xl)",
 			".popupMeta": "var(--font-ui-small)",
 			".publish-changes-switch-site .clickable-icon": "var(--icon-s)",
@@ -1421,7 +1447,7 @@
 			".setting-item-chevron": "var(--icon-s)",
 			".setting-item-icon": "var(--icon-s)",
 			".setting-item-status": "var(--icon-s)",
-			".setting-search-results, .vertical-tab-header-group-items": "var(--icon-s)",
+			".setting-search-results,.vertical-tab-header-group-items": "var(--icon-s)",
 			".sidebar-toggle-button": "var(--icon-m)",
 			".suggestion-item.mod-toggle .mod-checked": "var(--icon-xs)",
 			".table-col-drag-ghost": "var(--icon-s)",
@@ -1431,60 +1457,65 @@
 			".view-actions": "var(--icon-s)",
 			".view-header-nav-buttons": "var(--icon-s)",
 			".view-header-reload-button": "var(--icon-s)",
-			".webviewer-addressbar-suggestion.suggestion-item .suggestion-flair-left, .webviewer-addressbar-suggestion.suggestion-item .suggestion-icon:first-child": "var(--icon-s)",
-			".workspace > .workspace-split:not(.mod-root) .metadata-container": "var(--icon-xs)",
-			".workspace > .workspace-split:not(.mod-root) .metadata-container .metadata-property-value .clickable-icon": "var(--icon-xs)",
+			".webviewer-addressbar-suggestion.suggestion-item .suggestion-flair-left,.webviewer-addressbar-suggestion.suggestion-item .suggestion-icon:first-child": "var(--icon-s)",
 			".workspace-drawer .nav-buttons-container": "var(--icon-l)",
 			".workspace-drawer-header-icon": "var(--icon-l)",
 			".workspace-drawer-header-name-chevron": "var(--icon-m)",
 			".workspace-drawer-tab-options .workspace-tab-header-inner-chevron": "var(--icon-s)",
 			".workspace-drawer-tab-options .workspace-tab-header-inner-icon": "var(--icon-l)",
 			".workspace-drawer-tab-select .workspace-tab-header-inner .workspace-drawer-active-tab-chevron": "var(--icon-s)",
-			".workspace-tab-header-status-icon, .workspace-tab-header-inner-close-button": "var(--icon-xs)",
-			".workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon": "var(--icon-m)",
+			".workspace-tab-header-status-icon,.workspace-tab-header-inner-close-button": "var(--icon-xs)",
+			".workspace-tab-header-tab-list .clickable-icon,.workspace-tab-header-new-tab .clickable-icon": "var(--icon-m)",
+			".workspace>.workspace-split:not(.mod-root) .metadata-container": "var(--icon-xs)",
+			".workspace>.workspace-split:not(.mod-root) .metadata-container .metadata-property-value .clickable-icon": "var(--icon-xs)",
+			":where(.bases-query-container,.drag-reorder-ghost) .filter-expression": "var(--icon-s)",
+			":where(.bases-query-container,.drag-reorder-ghost) .filter-group-header-actions": "var(--icon-s)",
 			"body": "var(--icon-m)",
 			"body.is-tablet .sidebar-toggle-button": "var(--icon-l)",
 			"body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon": "var(--icon-s)"
 		},
 		"--icon-stroke": {
-			".base-toolbar-sort-item, .base-toolbar-groupby-item": "var(--icon-s-stroke-width)",
+			".base-toolbar-sort-item,.base-toolbar-groupby-item": "var(--icon-s-stroke-width)",
 			".bases-formula-error .warning-icon": "var(--icon-xs-stroke-width)",
 			".bases-kanban-column-create": "var(--icon-s-stroke-width)",
-			".bases-query-container .filter-expression": "var(--icon-s-stroke-width)",
-			".bases-query-container .filter-group .filter-group-header-actions": "var(--icon-s-stroke-width)",
 			".bases-table-header-label": "var(--icon-xs-stroke-width)",
 			".bases-table-header-sort": "var(--icon-xs-stroke-width)",
 			".bases-table-summary-cell": "var(--icon-xs-stroke-width)",
 			".bases-toolbar-menu-container": "var(--icon-s-stroke-width)",
 			".bases-toolbar-menu-form .input-row .formula-editor-status .status-icon": "var(--icon-xs-stroke-width)",
 			".bases-toolbar-menu-form .input-row .help-icon": "var(--icon-xs-stroke-width)",
+			".bases-toolbar-menu.mod-sheet .bases-toolbar-menu-header .clickable-icon": "var(--icon-l-stroke-width)",
 			".canvas-card-menu .canvas-card-menu-button": "var(--icon-xl-stroke-width)",
 			".canvas-control-item": "var(--canvas-controls-icon-stroke)",
-			".clickable-icon.side-dock-ribbon-action .svg-icon, .mod-primary-split .workspace-tab-header-inner-icon .svg-icon, .mod-secondary-split .workspace-tab-header-inner-icon .svg-icon": "var(--icon-m-stroke-width)",
+			".clickable-icon.side-dock-ribbon-action .svg-icon,.mod-primary-split .workspace-tab-header-inner-icon .svg-icon,.mod-secondary-split .workspace-tab-header-inner-icon .svg-icon": "var(--icon-m-stroke-width)",
 			".combobox-button .combobox-button-chevron": "var(--icon-xs-stroke-width)",
 			".combobox-button .combobox-button-icon": "var(--icon-s-stroke-width)",
 			".combobox-button .combobox-clear-button": "var(--icon-xs-stroke-width)",
 			".community-item-badge.mod-update": "var(--icon-xs-stroke-width)",
 			".community-item-downloads": "var(--icon-xs-stroke-width)",
 			".community-modal-info-downloads": "var(--icon-xs-stroke-width)",
-			".drag-ghost-self > .svg-icon": "var(--icon-xs-stroke-width)",
+			".drag-ghost-self>.svg-icon": "var(--icon-xs-stroke-width)",
 			".file-tree .clickable-icon": "var(--icon-s-stroke-width)",
 			".file-tree-item-icon": "var(--icon-s-stroke-width)",
+			".grip-handle": "var(--icon-s-stroke-width)",
 			".is-mobile .bases-header": "var(--icon-l-stroke-width)",
 			".is-mobile .combobox-clear-button": "var(--icon-s-stroke-width)",
-			".is-mobile .modal-header-button, .is-mobile .modal-close-button, .is-mobile .modal-setting-back-button, .is-mobile .view-header-nav-buttons, .is-mobile .view-header .view-action": "var(--icon-l-stroke-width)",
+			".is-mobile .modal-header-button,.is-mobile .modal-close-button,.is-mobile .modal-setting-back-button,.is-mobile .view-header-nav-buttons,.is-mobile .view-header .view-action,.is-mobile .mobile-onboarding-action,.is-mobile .mobile-onboarding-back-button": "var(--icon-l-stroke-width)",
 			".is-mobile .prompt-input-cta": "var(--icon-l-stroke-width)",
-			".is-phone .bases-toolbar-menu .bases-toolbar-menu-header .clickable-icon": "var(--icon-l-stroke-width)",
 			".is-phone .bases-toolbar-menu-container-header": "var(--icon-l-stroke-width)",
-			".is-phone .modal.mod-settings .vertical-tab-header-group-items, .is-phone .modal.mod-settings .setting-search-result-group": "var(--icon-m-stroke-width)",
+			".is-phone .modal.mod-settings .vertical-tab-header-group-items,.is-phone .modal.mod-settings .setting-search-result-group": "var(--icon-m-stroke-width)",
 			".is-phone .modal.mod-settings .vertical-tab-nav-item-chevron": "2.25px",
-			".is-phone .pdf-annotation-modal .popupContent:empty + .popupMeta, .is-phone .pdf-annotation-modal .popupMeta": "var(--icon-m-stroke-width)",
+			".is-phone .pdf-annotation-modal .popupContent:empty+.popupMeta,.is-phone .pdf-annotation-modal .popupMeta": "var(--icon-m-stroke-width)",
 			".is-phone .suggestion-item.mod-toggle": "var(--icon-l-stroke-width)",
 			".lightbox .modal-close-button": "var(--icon-s-stroke-width)",
 			".loader-spinner": "var(--icon-l-stroke-width)",
-			".markdown-embed-link, .file-embed-link": "var(--icon-s-stroke-width)",
-			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn, .markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn": "var(--icon-s-stroke-width)",
-			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-drag-handle, .markdown-source-view.mod-cm6 .cm-table-widget .table-col-drag-handle": "var(--icon-s-stroke-width)",
+			".markdown-embed-link,.file-embed-link": "var(--icon-s-stroke-width)",
+			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn,.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn": "var(--icon-s-stroke-width)",
+			".markdown-source-view.mod-cm6 .cm-table-widget .table-row-drag-handle,.markdown-source-view.mod-cm6 .cm-table-widget .table-col-drag-handle": "var(--icon-s-stroke-width)",
+			".menu.mod-sheet .bases-filter-page .bases-query-container .filter-group-actions .text-icon-button,.drag-reorder-ghost.mod-sheet .bases-query-container .filter-group-actions .text-icon-button": "var(--icon-xs-stroke-width)",
+			".menu.mod-sheet .bases-filter-page .conjunction-chevron,.drag-reorder-ghost.mod-sheet .conjunction-chevron": "var(--icon-xs-stroke-width)",
+			".menu.mod-sheet .bases-filter-page .filter-row .filter-group-header-actions,.drag-reorder-ghost.mod-sheet .filter-row .filter-group-header-actions": "var(--icon-xs-stroke-width)",
+			".menu.mod-sheet .bases-filter-page .filter-row .filter-row-actions,.drag-reorder-ghost.mod-sheet .filter-row .filter-row-actions": "var(--icon-xs-stroke-width)",
 			".metadata-property-value .clickable-icon": "var(--icon-xs-stroke-width)",
 			".mobile-navbar-action.has-longpress-menu .navbar-action-flair": "3px",
 			".mobile-navbar-actions": "var(--icon-l-stroke-width)",
@@ -1492,12 +1523,12 @@
 			".mobile-tab-switcher-menu-button-chevron": "var(--icon-s-stroke-width)",
 			".mobile-tab-switcher-menubar": "var(--icon-l-stroke-width)",
 			".mobile-toolbar-options-container": "var(--icon-l-stroke-width)",
-			".mod-root .mod-pinned, .mod-root .workspace-tab-header-inner-close-button": "var(--icon-s-stroke-width)",
-			".mod-root .workspace-tab-header-status-icon, .mod-root .workspace-tab-header-inner-icon": "var(--icon-xs-stroke-width)",
+			".mod-root .mod-pinned,.mod-root .workspace-tab-header-inner-close-button": "var(--icon-s-stroke-width)",
+			".mod-root .workspace-tab-header-status-icon,.mod-root .workspace-tab-header-inner-icon": "var(--icon-xs-stroke-width)",
 			".modal-status-icon": "1.5px",
 			".multi-select-pill": "var(--icon-xs-stroke-width)",
 			".multi-select-pill-remove-button": "var(--icon-xs-stroke-width)",
-			".nav-file-icon .svg-icon, .suggestion-flair .svg-icon, .menu-item-icon .svg-icon, .status-bar-item .svg-icon": "var(--icon-s-stroke-width)",
+			".nav-file-icon .svg-icon,.suggestion-flair .svg-icon,.menu-item-icon .svg-icon,.status-bar-item .svg-icon": "var(--icon-s-stroke-width)",
 			".pdf-lock-icon .svg-icon": "var(--icon-xl-stroke-width)",
 			".popupMeta": "2.5px",
 			".publish-changes-switch-site .clickable-icon": "var(--icon-s-stroke-width)",
@@ -1507,22 +1538,24 @@
 			".setting-item-chevron": "var(--icon-s-stroke-width)",
 			".setting-item-icon": "var(--icon-s-stroke-width)",
 			".setting-item-status": "var(--icon-s-stroke-width)",
-			".setting-search-results, .vertical-tab-header-group-items": "var(--icon-s-stroke-width)",
+			".setting-search-results,.vertical-tab-header-group-items": "var(--icon-s-stroke-width)",
 			".sidebar-toggle-button": "var(--icon-m-stroke-width)",
 			".suggestion-item.mod-toggle .mod-checked": "var(--icon-xs-stroke-width)",
 			".table-col-drag-ghost": "var(--icon-s-stroke-width)",
 			".tree-item-self .tree-item-icon .svg-icon:not(.right-triangle)": "var(--icon-s-stroke-width)",
-			".webviewer-addressbar-suggestion.suggestion-item .suggestion-flair-left, .webviewer-addressbar-suggestion.suggestion-item .suggestion-icon:first-child": "var(--icon-s-stroke-width)",
-			".workspace > .workspace-split:not(.mod-root) .metadata-container": "var(--icon-xs-stroke-width)",
-			".workspace > .workspace-split:not(.mod-root) .metadata-container .metadata-property-value .clickable-icon": "var(--icon-xs-stroke-width)",
+			".webviewer-addressbar-suggestion.suggestion-item .suggestion-flair-left,.webviewer-addressbar-suggestion.suggestion-item .suggestion-icon:first-child": "var(--icon-s-stroke-width)",
 			".workspace-drawer .nav-buttons-container": "var(--icon-l-stroke-width)",
 			".workspace-drawer-header-icon": "var(--icon-l-stroke-width)",
 			".workspace-drawer-header-name-chevron": "2.25px",
 			".workspace-drawer-tab-options .workspace-tab-header-inner-chevron": "var(--icon-s-stroke-width)",
 			".workspace-drawer-tab-options .workspace-tab-header-inner-icon": "var(--icon-l-stroke-width)",
 			".workspace-drawer-tab-select .workspace-tab-header-inner .workspace-drawer-active-tab-chevron": "var(--icon-s-stroke-width)",
-			".workspace-tab-header-status-icon, .workspace-tab-header-inner-close-button": "var(--icon-xs-stroke-width)",
-			".workspace-tab-header-tab-list .clickable-icon, .workspace-tab-header-new-tab .clickable-icon": "var(--icon-m-stroke-width)",
+			".workspace-tab-header-status-icon,.workspace-tab-header-inner-close-button": "var(--icon-xs-stroke-width)",
+			".workspace-tab-header-tab-list .clickable-icon,.workspace-tab-header-new-tab .clickable-icon": "var(--icon-m-stroke-width)",
+			".workspace>.workspace-split:not(.mod-root) .metadata-container": "var(--icon-xs-stroke-width)",
+			".workspace>.workspace-split:not(.mod-root) .metadata-container .metadata-property-value .clickable-icon": "var(--icon-xs-stroke-width)",
+			":where(.bases-query-container,.drag-reorder-ghost) .filter-expression": "var(--icon-s-stroke-width)",
+			":where(.bases-query-container,.drag-reorder-ghost) .filter-group-header-actions": "var(--icon-s-stroke-width)",
 			"body": "var(--icon-m-stroke-width)",
 			"body.is-tablet .sidebar-toggle-button": "var(--icon-l-stroke-width)",
 			"body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon": "var(--icon-s-stroke-width)"
@@ -1584,6 +1617,7 @@
 			".bases-toolbar-menu": "28px",
 			".is-mobile": "var(--touch-size-m)",
 			".is-mobile .menu": "40px",
+			".menu.mod-sheet .bases-filter-page .filter-row .filter-rhs-container,.drag-reorder-ghost.mod-sheet .filter-row .filter-rhs-container": "auto",
 			".metadata-container": "var(--metadata-input-height)",
 			"body": "30px"
 		},
@@ -1594,22 +1628,22 @@
 			"body": "5px"
 		},
 		"--input-shadow": {
-			".base-toolbar-sort-item, .base-toolbar-groupby-item": "none",
-			".bases-query-container .filter-expression": "none",
+			".base-toolbar-sort-item,.base-toolbar-groupby-item": "none",
 			".is-mobile": "none",
 			".mod-macos": "none",
-			".theme-dark": "inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09), 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent",
-			".theme-light": "inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.065), 0 0 0 0 transparent"
+			".theme-dark": "inset 0 .5px .5px .5px rgba(255, 255, 255, .09), 0 2px 4px 0 rgba(0, 0, 0, .15), 0 1px 1.5px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .2), 0 0 0 0 transparent",
+			".theme-light": "inset 0 0 0 1px rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .065), 0 0 0 0 transparent",
+			":where(.bases-query-container,.drag-reorder-ghost) .filter-expression": "none"
 		},
 		"--input-shadow-hover": {
 			".is-mobile": "none",
 			".mod-macos": "none",
-			".theme-dark": "inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16), 0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent",
-			".theme-light": "inset 0 0 0 1px rgba(0, 0, 0, 0.17), 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 0 0 0 transparent"
+			".theme-dark": "inset 0 .5px 1px .5px rgba(255, 255, 255, .16), 0 2px 3px 0 rgba(0, 0, 0, .3), 0 1px 1.5px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .4), 0 0 0 0 transparent",
+			".theme-light": "inset 0 0 0 1px rgba(0, 0, 0, .17), 0 1px 2px 0 rgba(0, 0, 0, .1), 0 0 0 0 transparent"
 		},
 		"--interactive-accent": {
 			".theme-dark": "var(--color-accent)",
-			"@media (forced-colors: active) » .horizontal-tab-nav-item, .vertical-tab-nav-item": "SelectedItem",
+			"@media(forced-colors:active) » .horizontal-tab-nav-item,.vertical-tab-nav-item": "SelectedItem",
 			"body": "var(--color-accent-1)"
 		},
 		"--interactive-accent-hover": {
@@ -1678,7 +1712,7 @@
 			".bases-toolbar-menu-item .bases-toolbar-menu-item-name": "var(--text-normal)",
 			".bases-toolbar-menu-item.mod-hidden .bases-toolbar-menu-item-name": "var(--text-faint)",
 			".setting-item-description": "var(--text-muted)",
-			"@keyframes multi-select-highlight » from": "var(--text-warning)",
+			"@keyframes multi-select-highlight » 0%": "var(--text-warning)",
 			"body": "var(--text-accent)"
 		},
 		"--link-color-hover": {
@@ -1740,7 +1774,7 @@
 			".bases-group-heading": "1",
 			".bases-kanban-card-property.mod-title": "1",
 			".bases-toolbar-menu-item .bases-toolbar-menu-item-name": "1",
-			"body": "0.7"
+			"body": ".7"
 		},
 		"--list-bullet-border": {
 			"body": "none"
@@ -1749,7 +1783,7 @@
 			"body": "50%"
 		},
 		"--list-bullet-size": {
-			"body": "0.3em"
+			"body": ".3em"
 		},
 		"--list-bullet-transform": {
 			"body": "none"
@@ -1767,7 +1801,7 @@
 			"body": "var(--text-muted)"
 		},
 		"--list-spacing": {
-			"body": "0.075em"
+			"body": ".075em"
 		},
 		"--modal-background": {
 			".is-mobile": "var(--background-primary)",
@@ -1803,7 +1837,7 @@
 		"--modal-radius": {
 			".is-mobile": "var(--touch-radius-xs)",
 			".is-phone .modal-container": "var(--touch-radius-xs)",
-			".is-phone .modal-container.mod-confirmation .modal, .is-phone .modal.mod-lg, .is-phone .modal.mod-sidebar-layout": "var(--touch-radius-s) var(--touch-radius-s) 0 0",
+			".is-phone .modal-container.mod-confirmation .modal,.is-phone .modal.mod-lg,.is-phone .modal.mod-sidebar-layout": "var(--touch-radius-s) var(--touch-radius-s) 0 0",
 			".is-phone .modal.mod-community-modal .community-modal-details": "0",
 			".mod-macos": "var(--radius-xl)",
 			"body": "var(--radius-l)"
@@ -1819,9 +1853,9 @@
 		"--nav-collapse-icon-color": {
 			".is-translucent:not(.is-fullscreen)": "color-mix(in oklch, var(--mono-100) 30%, transparent)",
 			".sync-history-list-item-header.is-active": "var(--text-on-accent)",
-			"@media (hover: hover) » .sync-history-list-item-header .tree-item-flair:hover": "var(--text-normal)",
-			"@media (hover: hover) » .sync-history-list-item-header.is-active .tree-item-flair:hover": "var(--text-on-accent)",
-			"@media (hover: hover) » .sync-history-list-item-header.is-active:hover": "var(--text-on-accent)",
+			"@media(hover:hover) » .sync-history-list-item-header .tree-item-flair:hover": "var(--text-normal)",
+			"@media(hover:hover) » .sync-history-list-item-header.is-active .tree-item-flair:hover": "var(--text-on-accent)",
+			"@media(hover:hover) » .sync-history-list-item-header.is-active:hover": "var(--text-on-accent)",
 			"body": "var(--collapse-icon-color)"
 		},
 		"--nav-indentation-guide-color": {
@@ -1858,7 +1892,7 @@
 		"--nav-item-padding": {
 			".is-mobile": "var(--size-4-2) var(--size-4-2) var(--size-4-2) var(--size-4-6)",
 			".is-tablet": "var(--size-2-3) var(--size-4-2) var(--size-2-3) var(--size-4-6)",
-			".mod-rtl, .is-rtl, .rtl": "var(--size-4-1) var(--size-4-6) var(--size-4-1) var(--size-4-2)",
+			".mod-rtl,.is-rtl,.rtl": "var(--size-4-1) var(--size-4-6) var(--size-4-1) var(--size-4-2)",
 			".mod-rtl.is-mobile": "var(--size-2-3) var(--size-4-6) var(--size-2-3) var(--size-4-2)",
 			"body": "var(--size-4-1) var(--size-4-2) var(--size-4-1) var(--size-4-6)"
 		},
@@ -1880,7 +1914,7 @@
 			"body": "pre"
 		},
 		"--popover-font-size": {
-			".popover.hover-popover > .markdown-embed[data-type=\"footnote\"]:not(.mod-empty)": "var(--footnote-size)",
+			".popover.hover-popover>.markdown-embed[data-type=footnote]:not(.mod-empty)": "var(--footnote-size)",
 			"body": "var(--font-preferred-size)"
 		},
 		"--popover-height": {
@@ -1952,6 +1986,10 @@
 			".mod-macos": "gray",
 			"body": "color-mix(in oklch, var(--mono-100) 10%, transparent)"
 		},
+		"--scrollbar-width": {
+			".is-android": "5px",
+			"body": "12px"
+		},
 		"--search-clear-button-color": {
 			"body": "var(--text-muted)"
 		},
@@ -1974,15 +2012,15 @@
 			"body": "var(--background-primary)"
 		},
 		"--shadow-l": {
-			".theme-dark": "0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2)",
-			".theme-light": "0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 15px 30px rgba(0, 0, 0, 0.1)"
+			".theme-dark": "0px 1.8px 7.3px rgba(0, 0, 0, .071), 0px 6.3px 24.7px rgba(0, 0, 0, .112), 0px 30px 90px rgba(0, 0, 0, .2)",
+			".theme-light": "0px 1.8px 7.3px rgba(0, 0, 0, .071), 0px 6.3px 24.7px rgba(0, 0, 0, .112), 0px 15px 30px rgba(0, 0, 0, .1)"
 		},
 		"--shadow-s": {
-			".theme-dark": "0px 1px 2px rgba(0, 0, 0, 0.121), 0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3)",
-			".theme-light": "0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07)"
+			".theme-dark": "0px 1px 2px rgba(0, 0, 0, .121), 0px 3.4px 6.7px rgba(0, 0, 0, .179), 0px 15px 30px rgba(0, 0, 0, .3)",
+			".theme-light": "0px 1px 2px rgba(0, 0, 0, .028), 0px 3.4px 6.7px rgba(0, 0, 0, .042), 0px 15px 30px rgba(0, 0, 0, .07)"
 		},
 		"--sidebar-markdown-font-size": {
-			"body": "calc(var(--font-preferred-size) * 0.9)"
+			"body": "calc(var(--font-preferred-size) * .9)"
 		},
 		"--sidebar-tab-text-display": {
 			"body": "none"
@@ -2033,9 +2071,9 @@
 			"body": "var(--background-modifier-border-hover)"
 		},
 		"--slider-thumb-border-width": {
-			".is-mobile": "0.5px",
+			".is-mobile": ".5px",
 			".mod-macos": "0",
-			"body": "0.5px"
+			"body": ".5px"
 		},
 		"--slider-thumb-height": {
 			".is-mobile": "24px",
@@ -2085,7 +2123,7 @@
 			"body": "var(--text-muted)"
 		},
 		"--swatch-height": {
-			".canvas-color-picker-item input[type=\"color\"]": "20px",
+			".canvas-color-picker-item input[type=color]": "20px",
 			".graph-color-group": "18px",
 			".is-mobile": "var(--touch-size-s)",
 			"body": "22px"
@@ -2099,7 +2137,7 @@
 			"body": "inset 0 0 0 1px color-mix(in oklch, var(--mono-100) 15%, transparent)"
 		},
 		"--swatch-width": {
-			".canvas-color-picker-item input[type=\"color\"]": "20px",
+			".canvas-color-picker-item input[type=color]": "20px",
 			".graph-color-group": "18px",
 			".is-mobile": "var(--touch-size-s)",
 			"body": "22px"
@@ -2108,7 +2146,7 @@
 			"body": "var(--background-primary)"
 		},
 		"--tab-container-background": {
-			".sidebar-toggle-button, .workspace-tabs.mod-top": "var(--titlebar-background)",
+			".sidebar-toggle-button,.workspace-tabs.mod-top": "var(--titlebar-background)",
 			"body": "var(--background-secondary)"
 		},
 		"--tab-curve": {
@@ -2131,7 +2169,7 @@
 			"body": "var(--divider-color)"
 		},
 		"--tab-outline-width": {
-			"@media (min-resolution: 2dppx), (min-resolution: 192dpi) » .is-phone": "0.5px",
+			"@media(min-resolution:2dppx),(min-resolution:192dpi) » .is-phone": ".5px",
 			"body": "1px"
 		},
 		"--tab-radius": {
@@ -2154,7 +2192,7 @@
 			"body": "700px"
 		},
 		"--tab-stacked-shadow": {
-			"body": "-8px 0 8px 0 rgba(0, 0, 0, 0.05)"
+			"body": "-8px 0 8px 0 rgba(0, 0, 0, .05)"
 		},
 		"--tab-stacked-text-align": {
 			"body": "start"
@@ -2271,10 +2309,10 @@
 			"body": "none"
 		},
 		"--tag-padding-x": {
-			"body": "0.65em"
+			"body": ".65em"
 		},
 		"--tag-padding-y": {
-			"body": "0.25em"
+			"body": ".25em"
 		},
 		"--tag-radius": {
 			"body": "2em"
@@ -2316,7 +2354,7 @@
 		"--titlebar-background": {
 			".is-tablet.theme-dark": "var(--background-primary)",
 			"body": "var(--background-secondary)",
-			"body.is-focused .titlebar": "var(--titlebar-background-focused)",
+			"body.is-focused .titlebar,body.is-focused .workspace-ribbon.mod-primary,body.is-focused .sidebar-toggle-button,body.is-focused .workspace-tabs.mod-top": "var(--titlebar-background-focused)",
 			"body.is-frameless.in-progress": "var(--background-primary)"
 		},
 		"--titlebar-background-focused": {
