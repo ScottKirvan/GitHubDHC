@@ -1973,6 +1973,19 @@ DOCUMENT CONTAINER - Full-width with side margins and border
     --file-line-width: 85%;
 }
 
+.is-phone .markdown-preview-view,
+.is-phone .markdown-source-view.mod-cm6 {
+    --file-line-width: 100%;
+}
+
+.is-phone .workspace-leaf-content[data-type="markdown"] .markdown-preview-view,
+.is-phone .workspace-leaf-content[data-type="markdown"] .markdown-source-view.mod-cm6 .cm-scroller {
+    padding-left: 0;
+    padding-right: 0;
+    scrollbar-gutter: auto;
+    --scrollbar-width: 0px;
+}
+
 /* Always apply — GitHub-style bordered document container */
 .workspace-leaf-content[data-type="markdown"] .markdown-preview-sizer,
 .workspace-leaf-content[data-type="markdown"] .cm-sizer {
@@ -1981,6 +1994,12 @@ DOCUMENT CONTAINER - Full-width with side margins and border
     margin-right: 14px;
     border: 1px solid var(--color-base-50);
     border-radius: 6px;
+}
+
+.is-phone .workspace-leaf-content[data-type="markdown"] .markdown-preview-sizer,
+.is-phone .workspace-leaf-content[data-type="markdown"] .cm-sizer {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 
