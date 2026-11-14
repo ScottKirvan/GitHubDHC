@@ -9,8 +9,8 @@
 
 ### Bug Fixes
 
-* make document container edge-to-edge on phone ([99e7c4d](https://github.com/ScottKirvan/GitHubDHC/commit/99e7c4d1bfa2734f1467c5afad13f5bc95061a70))
-* underline links without !important and lint as the directory does ([be4bd60](https://github.com/ScottKirvan/GitHubDHC/commit/be4bd60858d54e83f953a2aaca24e246f0e890c0)), closes [#59](https://github.com/ScottKirvan/GitHubDHC/issues/59)
+* make document container edge-to-edge on phone ([#63](https://github.com/ScottKirvan/GitHubDHC/pull/63))
+* underline links without !important and lint as the directory does ([#60](https://github.com/ScottKirvan/GitHubDHC/pull/60)), closes [#59](https://github.com/ScottKirvan/GitHubDHC/issues/59)
 
 ## [2.3.2](https://github.com/ScottKirvan/GitHubDHC/compare/2.3.1...2.3.2) (2026-10-29)
 
